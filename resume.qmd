@@ -1,87 +1,52 @@
 ---
 layout: cv
-title: Isaac Newtons's CV
+title: Erin Hu's CV
 ---
-# Isaac Newton
-Physicist, Mathematician, Cambridge professor.
+# Erin Hu
+Data analyst, Business analyst, Statistician, Mathematician.
 
 <div id="webaddress">
-<a href="isaac@applesdofall.org">isaac@applesdofall.org</a>
-| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
+| <a href="www.linkedin.com/in/erinhu0619">My Linkdin page</a>
 </div>
 
 
 ## Currently
 
-Standing on the shoulders of giants
+Senior student at BYU - Idaho
 
 ### Specialized in
+Hard Skill: Data Analysis(R studio, SQL, Power BI), Data Visualization(Tableau), Microsoft Excel
 
-Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
-
-
+Soft Skills: Cross-functional Team Collaboration, Strong Attention to Detail, Analytical Thinking, Problem Solving
 ### Research interests
 
-Cooling, power series, optics, alchemy, planetary motions, apples.
+Finance, business direction, operation.
 
 
 ## Education
 
-`1654-1660`
-__The King's School, Grantham.__
+`2021-2025`
+__Brigham Young University, Idaho__
 
-`June 1661 - now`
-__Trinity College, Cambridge__
-
-- Sizar
-
-`1667 - death`
-__Trinity College, Cambridge__
-
-- Fellow
-
-
-
-## Awards
-
-`2012`
-President, *Royal Society*, London, UK
-
-Associate, *French Academy of Science*, Paris, France
-
-
-
-## Publications
-
-<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
-
-### Journals
-
-`1669`
-Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
-
-`1669`
-Lectiones opticæ.
-
-etc. etc. etc.
-
-### Patents
-
-`2012`
-Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
+- Statistics Major with a Data Science Minor
 
 
 ## Occupation
 
-`1600`
-__Royal Mint__, London
+`Sep 2024 - Present`
+__BYUI__, Idaho
+- Initiated new visualized statistics, leading to catching discrepancies between sources using Power BI and
+Presenting indicators on a weekly basis
+- Generated time series charts and KPI dashboards to monitor annual performance, collaborating with
+executive leadership to enhance workflow strategies through the utilization of DAX and Query
 
-- Warden
-- Minted coins
+`April 2024 - Sep 2024`
+__The Church of Jesus Christ of Latter Day Saints__, Utah
 
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
-
+- Processed 4 million rows of data and organized a comprehensive data dictionary
+- Collaborated with various departments and facilitate a strong connection
+- Designed a Power BI dashboard to detect utility bill anomalies and reported to stakeholders
+- Contributed to analytical projects, data validation, and assisted in data interpretation tasks
 
 
 <!-- ### Footer
