@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "The War with Star Wars"
+subtitle: "Using a Decision Tree to Predict Whether a Person Makes Over $50K"
+author: "Erin_Hu"
 format:
   html:
     self-contained: true
@@ -25,4 +25,440 @@ execute:
     
 ---
 
-### Paste in a template
+
+```{python}
+#| label: libraries
+#| include: false
+import pandas as pd
+import numpy as np
+import plotly.express as px
+from lets_plot import *
+import math
+from sklearn.model_selection import train_test_split
+from sklearn import tree
+from sklearn import metrics
+
+```
+
+
+### Elevator pitch
+
+As we cleaned the data to make it ready for a machine learning model, we changed all the answers into numbers. After putting the data into the model, we got a 52% accuracy rate when predicting if someone who has watched Star Wars makes more than $50,000 a year.
+
+
+```{python}
+# %%
+url = 'https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv'
+
+df_cols = pd.read_csv(url, encoding = "ISO-8859-1", nrows = 1).melt()
+df = pd.read_csv(url, encoding = "ISO-8859-1", skiprows =2, header = None )
+```
+
+
+
+### Shorten and Clean Data  |Question 1
+
+__Shorten the column names and clean them up for easier use with pandas. Provide a table or list that exemplifies how you fixed the names.__
+
+
+```{python}
+
+variables_replace = {
+    'Which of the following Star Wars films have you seen\\? Please select all that apply\\.':'Seen',
+    'Please rank the Star Wars films in order of preference with 1 being your favorite film in the franchise and 6 being your least favorite film.':'Rank',
+    'Please state whether you view the following characters favorably, unfavorably, or are unfamiliar with him/her.':'view',
+    'Do you consider yourself to be a fan of the Star Trek franchise\\?':'is_fan_star_trek',
+    'Do you consider yourself to be a fan of the Expanded Universe\\?\x8cæ':'is_fan_universe',
+    'Are you familiar with the Expanded Universe\\?':'know_universe',
+    'Have you seen any of the 6 films in the Star Wars franchise\\?':'seen_any',
+    'Do you consider yourself to be a fan of the Star Wars film franchise\\?':'star_wars_fans',
+    'Which character shot first\\?':'shot_first',
+    'Unnamed: \d{1,2}':np.nan,
+    ' ':'_',
+}
+
+values_replace = {
+    'Response':'',
+    'Star Wars: Episode ':'',
+    ' ':'_'
+}
+
+
+df_cols_use = (df_cols
+    .assign(
+        value_replace = lambda x:  x.value.str.strip().replace(values_replace, regex=True),
+        variable_replace = lambda x: x.variable.str.strip().replace(variables_replace, regex=True)
+    )
+    .fillna(method = 'ffill')
+    .fillna(value = "")
+    .assign(column_names = lambda x: x.variable_replace.str.cat(x.value_replace, sep = "__").str.strip('__').str.lower())
+    )
+
+df.columns = df_cols_use.column_names.to_list()
+df_cols_use.head(5)
+```
+
+we have combined the data's two column titles into more precies columns and made it easier for our computer to read, as we are preping to use it in graphs and a ML model.
+
+### Clean and Format |Question 2
+
+ __Clean and format the data so that it can be used in a machine learning model. As you format the data, you should complete each item listed below. In your final report provide example(s) of the reformatted data with a short description of the changes made.__
+
+### |Part A
+
+__Filter the dataset to respondents that have seen at least one film__
+
+```{python}
+seen_columns = [
+    'seen__i__the_phantom_menace', 
+    'seen__ii__attack_of_the_clones', 
+    'seen__iii__revenge_of_the_sith', 
+    'seen__iv__a_new_hope', 
+    'seen__v_the_empire_strikes_back', 
+    'seen__vi_return_of_the_jedi'
+]
+# Filter out respondents who have seen any Star Wars movie but haven't specified any
+have_seen_df = df[df[seen_columns].notna().any(axis=1)]
+```
+
+looking at if respondents put down the name of a Star Wars movie, and then filtered to people who put down at least on title. this is the data frame that we will be filtering.
+
+
+### |Part B
+
+__Create a new column that converts the age ranges to a single number. Drop the age range categorical column__
+
+
+```{python}
+# Convert age ranges to a single number and drop the original column
+have_seen_df['age_num'] = (have_seen_df['age']
+        .str.replace(">", "")
+        .str.replace('18-29', '1')
+        .str.replace('30-44', '2')
+        .str.replace('45-60', '3')
+        .str.replace('60', '4')
+        .astype('float'))
+have_seen_df = have_seen_df.drop(columns=['age'])
+```
+
+filiting the age column from a string, into a number so it is computable. 
+
+### |Part C
+
+__Create a new column that converts the education groupings to a single number. Drop the school categorical column__
+
+```{python}
+#clean up and convert education
+have_seen_df['education_num'] = (have_seen_df['education']
+        .replace(np.nan, '0')
+        .str.replace('Less than high school degree', '8')
+        .str.replace('High school degree', '12')
+        .str.replace('Some college or Associate degree', '14')
+        .str.replace('Bachelor degree', '16')
+        .str.replace('Graduate degree', '20')
+        .astype('float'))
+have_seen_df = have_seen_df.drop(columns=['education'])
+```
+
+filtering down esucation to numbers that corispond to number of years of schooling that were aquired by respondents. (ex. 8 = middle school,  12 = highschool,  some college = 12...).
+
+### |Part D
+
+__Create a new column that converts the income ranges to a single number. Drop the income range categorical column__
+
+```{python}
+# %%
+#clean up and remove symbols
+new_income = (have_seen_df['household_income']
+        .str.split("-", expand=True)
+        .rename(columns={0: 'income_min', 1: 'income_max'})
+        .apply(lambda x: x.str.replace("$", ""))
+        .apply(lambda x: x.str.replace(",", ""))
+        .apply(lambda x: x.str.replace("+", ""))
+        .astype('float'))
+
+# Join the new income columns back to the DataFrame
+have_seen_df = pd.concat([have_seen_df, new_income['income_min']], axis=1)
+have_seen_df = have_seen_df.drop(columns=['household_income'])
+```
+
+making income into one column by puting the minimum range number as the only number present in the column.
+
+### |Part E
+
+__Create your target (also known as “y” or “label”) column based on the new income range column__
+
+```{python}
+have_seen_df['income_target'] = have_seen_df['income_min'].apply(lambda x: 1 if x < 50000 else 0)
+```
+
+creating a target column for the ML model with over $50,000 in the income_min column =  1 in the target column, otherwise its a 0.
+
+```{python}
+# Assuming df is already defined
+pd.set_option('future.no_silent_downcasting', True)
+
+columns_to_transform = ['view__han_solo', 'view__luke_skywalker', 'view__princess_leia_organa', 'view__anakin_skywalker', 'view__obi_wan_kenobi', 'view__emperor_palpatine', 'view__darth_vader', 'view__lando_calrissian', 'view__boba_fett', 'view__c-3p0', 'view__r2_d2', 'view__jar_jar_binks', 'view__padme_amidala', 'view__yoda']
+
+for col in columns_to_transform:
+    have_seen_df[col] = (have_seen_df[col]
+               .replace('Very favorably', 2)
+               .replace('Somewhat favorably', 1)
+               .replace([np.nan, 'Unfamiliar (N/A)', 'Neither favorably nor unfavorably (neutral)'], 0)
+               .replace('Somewhat unfavorably', -1)
+               .replace('Very unfavorably', -2)
+               .astype(int))
+```
+
+
+
+### |Part F
+
+__One-hot encode all remaining categorical columns__
+
+```{python}
+# %%
+# One-hot encoding
+categorical_columns = ['seen__i__the_phantom_menace', 'seen__ii__attack_of_the_clones', 'seen__iii__revenge_of_the_sith', 'seen__iv__a_new_hope', 'seen__v_the_empire_strikes_back', 'seen__vi_return_of_the_jedi']
+
+have_seen_df[categorical_columns] = have_seen_df[categorical_columns].notna().astype(int)
+
+# Perform one-hot encoding on 'location_(census_region)' and 'shot_first'
+one_hot_df = pd.get_dummies(have_seen_df[['location_(census_region)', 'shot_first']], drop_first=True)
+
+# Concatenate one-hot encoded columns with the original DataFrame
+have_seen_df = pd.concat([have_seen_df, one_hot_df], axis=1)
+
+# Drop the original categorical columns used for one-hot encoding
+have_seen_df = have_seen_df.drop(columns=['location_(census_region)', 'shot_first'])
+```
+
+Hot code the shot_first data, and location data to turn it into nubmers and computable. as well as turnign the seen columns into 1's if a title and no answers into 0's.
+
+```{python}
+# Combine all transformed columns into the final DataFrame
+final_df = have_seen_df.copy()
+
+# Ensure binary representation for all boolean columns
+final_df = final_df.replace([True, 'Yes', 'Male'], 1).replace([False, 'No', np.nan, 'Female'], 0)
+final_df
+
+
+```
+
+This is the final filtered data frame. This has 835 respondents and we are using this to make graphs and the ML model. 
+
+### Validate |Question 3
+
+__Validate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.__
+
+```{python}
+
+# Calculate percentages
+han_count = final_df['shot_first_Han'].sum()
+greedo_count = ((final_df['shot_first_Han'] == 0) & (final_df["shot_first_I don't understand this question"] == 0)).sum()
+dont_understand_count = final_df["shot_first_I don't understand this question"].sum()
+
+total_responses = len(final_df)
+
+han_percent = (han_count / total_responses) * 100
+greedo_percent = (greedo_count / total_responses) * 100
+dont_understand_percent = (dont_understand_count / total_responses) * 100
+greedo_percent_rounded = math.floor(greedo_percent)
+
+
+# Create a DataFrame with the percentages
+shot_data = pd.DataFrame({
+    'Who_Shot_First': ["I don't understand this question", 'Greedo', 'Han'],
+    'Percent': [dont_understand_percent, greedo_percent_rounded, han_percent]
+})
+
+# Create the bar chart using Plotly
+shot_chart = px.bar(
+    shot_data,
+    x='Percent',
+    y='Who_Shot_First',
+    orientation='h',  # horizontal bars
+    title="Who Shot First?",  # Title of the chart
+)
+
+# Update layout with annotations and subtitle
+
+# Update layout with annotations and subtitle
+shot_chart.update_layout(
+    annotations=[
+        {
+            'x': percent,
+            'y': category,
+            'text': f'{percent:.0f}%',  # Display percentage with two decimal places
+            'showarrow': False,
+            'font': {'color': 'black', 'size': 12},
+            'xanchor': 'left' if percent < 50 else 'right'  # Align text based on bar position
+        }
+        for percent, category in zip(shot_data['Percent'], shot_data['Who_Shot_First'])
+    ],
+)
+# Add subtitle directly using add_annotation()
+shot_chart.add_annotation(
+    text='According to 834 respondents',  # Subtitle text
+    x=-0,  # Subtitle position (middle of the chart)
+    y=1.15,  # Subtitle position (above the chart)
+    xref='paper',  # Subtitle alignment (relative to the entire chart width)
+    yref='paper',  # Subtitle alignment (relative to the entire chart height)
+    showarrow=False,  # No arrow for the annotation
+    font=dict(size=12, color='black'),  # Font settings for the subtitle text
+)
+
+# Show the chart
+shot_chart.show()
+```
+
+This is the replica of the How Shot First graph from the artical.
+
+```{python}
+
+# Calculate percentages
+Phantom = final_df['seen__i__the_phantom_menace'].sum()
+clones = final_df['seen__ii__attack_of_the_clones'].sum()
+Revenge = final_df['seen__iii__revenge_of_the_sith'].sum()
+Hope = final_df['seen__iv__a_new_hope'].sum()
+Empire = final_df['seen__v_the_empire_strikes_back'].sum()
+Return = final_df['seen__vi_return_of_the_jedi'].sum()
+
+total_responses = len(final_df)
+
+Phantom_percent = (Phantom / total_responses) * 100
+clones_percent = (clones / total_responses) * 100
+Revenge_percent = (Revenge / total_responses) * 100
+Hope_percent = (Hope / total_responses) * 100
+Empire_percent  = (Empire  / total_responses) * 100
+Return_percent = (Return / total_responses) * 100
+
+Phantom_percent = math.floor(Phantom_percent)
+
+
+# Create a DataFrame with the percentages
+shot_data = pd.DataFrame({
+    'movies': ["Return of the Jedi", ' The empire Strikes Back', ' A New Hope', 'Revenge fo the Sith', 'Attack of the Clones', 'The Phantom Menace'],
+    'Percent': [Return_percent, Empire_percent, Hope_percent,Revenge_percent, clones_percent, Phantom_percent]
+})
+
+# Create the bar chart using Plotly
+shot_chart = px.bar(
+    shot_data,
+    x='Percent',
+    y='movies',
+    orientation='h',  # horizontal bars
+    title="Which 'Star Wars' Movies Have You Seen?",  # Title of the chart
+)
+shot_chart.update_layout(
+    annotations=[
+        {
+            'x': percent,
+            'y': category,
+            'text': f'{percent:.0f}%',  # Display percentage with two decimal places
+            'showarrow': False,
+            'font': {'color': 'black', 'size': 12},
+            'xanchor': 'left' if percent > 50 else 'right'  # Align text based on bar position
+        }
+        for percent, category in zip(shot_data['Percent'], shot_data['movies'])
+    ],
+)
+# Add subtitle directly using add_annotation()
+shot_chart.add_annotation(
+    text='According to 834 respondents',  # Subtitle text
+    x=-0,  # Subtitle position (middle of the chart)
+    y=1.15,  # Subtitle position (above the chart)
+    xref='paper',  # Subtitle alignment (relative to the entire chart width)
+    yref='paper',  # Subtitle alignment (relative to the entire chart height)
+    showarrow=False,  # No arrow for the annotation
+    font=dict(size=12, color='black'),  # Font settings for the subtitle text
+)
+
+shot_chart
+```
+
+This is the replica of which movie the respondents have seen from the artical.
+
+
+### Machine Learning Model|Question 4
+
+__Build a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.__
+
+```{python}
+columns_to_keep = ['age_num', 'gender', 'education_num', 'star_wars_fans', 'seen__iv__a_new_hope', 'seen__vi_return_of_the_jedi', 'seen__v_the_empire_strikes_back', 'location_(census_region)_West North Central','shot_first_Han','location_(census_region)_Middle Atlantic']
+
+X_pred = final_df[columns_to_keep]
+y_pred = final_df['income_target']
+X_train, X_test, y_train, y_test = train_test_split(
+    X_pred, y_pred, test_size = .30, random_state = 100)  
+
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+```
+
+```{python}
+df_features = pd.DataFrame(
+    {'f_names': X_train.columns, 
+    'f_values': clf.feature_importances_}).sort_values('f_values', ascending = False)
+
+chart = px.bar(df_features.head(15),
+    x='f_values', 
+    y='f_names'
+)
+
+chart.update_layout(yaxis={'categoryorder':'total ascending'})
+```
+
+This shows the corilation of more then $50,000 for each one of these columns.
+
+```{python}
+print(metrics.classification_report(y_pred, y_test))
+```
+
+```{python}
+metrics.RocCurveDisplay.from_estimator(clf, X_test, y_test)
+```
+
+This graph shows that we have over 50% acuricy with our model.
+
+```{python}
+df_features = pd.DataFrame(
+    {'f_names': X_train.columns, 
+    'f_values': clf.feature_importances_}).sort_values('f_values', ascending = False)
+```
+
+
+```{python}
+df_features
+``` 
+
+
+```{python}
+confusion = metrics.confusion_matrix(y_test, y_pred)
+confusion
+``` 
+
+```{python}
+tp = confusion[0,0]
+fp = confusion[1,0]
+fn = confusion[0,1]
+tn = confusion[1,1]
+``` 
+
+```{python}
+precision = (tp / (tp+fp))
+accuracy = ((tp+tn) / (tp+fn+fp+tn))
+negative_prediction = (tn / (tn+fn))
+metrics = {
+    'Metric': ['Precision', 'Accuracy', 'Negative Prediction'],
+    'Value': [precision, accuracy, negative_prediction]}
+
+df = pd.DataFrame(metrics)
+df
+``` 
+
+
+This table shows our precision accuracy and negative rediction and how acurite they are out of 1. precision is a 75%, accuracy is 67% and our neagtive rediction is 30% acurrate.
