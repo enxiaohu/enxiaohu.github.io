@@ -29,7 +29,7 @@ website:
         file: resume.qmd
       - text: "Data Cleansing"
         file: cleansing.qmd
-      - text: "Data Exploration"
+      - text: "Linear Regression"
         file: exploration.qmd
       - text: "Story Telling"
         file: story_telling.qmd
