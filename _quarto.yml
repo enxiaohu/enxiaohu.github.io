@@ -70,7 +70,7 @@ website:
       style: "docked"
       background: light
       contents:
-        - text: "Data Exploration"
+        - text: "Linear Regression"
           file: exploration.qmd
         - text: "---"
         - text: "Project 1"
