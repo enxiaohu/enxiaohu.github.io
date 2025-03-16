@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Client Report - [Can You Predict That?]"
+subtitle: "Using Random Forest to Determine if a Home Was Built Before 1980"
+author: "[Erin Hu]"
 format:
   html:
     self-contained: true
@@ -25,4 +25,250 @@ execute:
     
 ---
 
-### Paste in a template
+
+
+```{python}
+# Data manipulation
+import pandas as pd
+import numpy as np
+# Data visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+from lets_plot import *
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+# Machine Learning models and tools
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn import tree
+# Model evaluation and metrics
+from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold, cross_val_score
+from sklearn.metrics import (
+    accuracy_score, classification_report, confusion_matrix,
+    precision_score, recall_score, f1_score
+)
+from sklearn import metrics
+from sklearn.preprocessing import StandardScaler
+# Data display utilities
+from tabulate import tabulate
+# from plotnine import ggplot, aes, labs, geom_bar, theme,geom_line
+
+df = pd.read_csv('https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv')
+# print(df.head())
+```
+
+
+
+
+
+
+### Elevator Pitch
+
+_The analysis looked at home features and how they relate to when the home was built. It found important details that help decide if a home was built before 1980. Using a Random Forest classification model, we reached about 91% accuracy. Important factors include the number of bedrooms, number of bathrooms, and the style of the home. This model is a useful tool for grouping homes by the time they were built, which can help with marketing and making good decisions in real estate._
+
+
+
+
+### QUESTION|TASK 1
+
+__Create 2-3 charts that evaluate potential relationships between the home variables and before1980. Explain what you learn from the charts that could help a machine learning algorithm.__
+
+_The charts below show how different home features are related to whether a home was built before 1980. Understanding these relationships helps a machine learning algorithm by identifying which features are important for predicting the construction period. The line chart and bar chart both shows that there's more hourses built before 1980._
+
+
+
+```{python}
+LetsPlot.setup_html()
+
+# Add a new column to indicate whether the house was built before or after 1980
+df['built_period'] = df['yrbuilt'].apply(lambda x: 'before 1980' if x <= 1980 else 'after 1980')
+
+# print(df['built_period'])
+
+# Group the data by 'numbdrm' and 'built_period' and count occurrences
+grouped_data = df.groupby(['numbdrm', 'built_period']).size().reset_index(name='count')
+
+# Plot using Lets-Plot
+gg = ggplot(grouped_data, aes(x='numbdrm', y='count', color='built_period')) + \
+     geom_line() + \
+     ggtitle('Number of Bedrooms Built Before and After 1980') + \
+     theme(axis_text_x=element_text(angle=45, hjust=1))
+
+gg.show()
+
+```
+
+```{python}
+from lets_plot import *
+
+# Initialize Lets-Plot
+LetsPlot.setup_html(isolated_frame=True)
+
+# Create a new column to classify homes built before or after 1980
+df['built_period'] = df['yrbuilt'].apply(lambda x: 'before 1980' if x <= 1980 else 'after 1980')
+
+# Group data by 'built_period' and count the number of homes
+grouped_before1980 = df['built_period'].value_counts().reset_index()
+grouped_before1980.columns = ['Built Period', 'numbaths']
+
+# Creating the bar plot using Lets-Plot
+plot = (ggplot(grouped_before1980, aes(x='Built Period', y='numbaths', fill='Built Period')) +
+        geom_bar(stat='identity') +
+        ggsize(800, 500) +
+        ggtitle('Number of Bathrooms: Built Before 1980 vs After 1980') +
+        xlab('Built Period') +
+        ylab('numbaths') +
+        theme(axis_text_x=element_text(angle=45, hjust=1)))
+
+# Display the plot
+plot.show()
+
+```
+
+
+
+
+### QUESTION|TASK 2
+
+__Build a classification model labeling houses as being built “before 1980” or “during or after 1980”. Your goal is to reach or exceed 90% accuracy. Explain your final model choice (algorithm, tuning parameters, etc) and describe what other models you tried.__
+
+I chose the Random Forest model for this task because it is reliable and can handle many features effectively without overfitting. This model achieved an accuracy of 91%. In the future, I am interested in exploring other modeling methods to improve performance and gain new insights.
+
+```{python}
+# # random_state=42 helps ensure that the data split will be the same every time you run the code, making your results reproducible and easier to compare across different experiments
+q2 = df.drop(columns=['livearea',  'yrbuilt', 
+                       'numbdrm', 'numbaths', 'built_period', 
+                      'parcel'])
+
+#'stories', 'finbsmnt', 'nocars', 'basement', 
+
+np.random.seed(42)
+# q2['random_noise'] = np.random.rand(len(q2))
+
+# Split the data into features (X) and target (y)
+X = q2.drop('before1980', axis=1)
+y = q2['before1980']
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# # I don't need to transform but also do it won't affect
+# scaler = StandardScaler()
+# X_train_scaled = scaler.fit_transform(X_train)  # Fit and transform on training data
+# X_test_scaled = scaler.transform(X_test)        # Transform test data (no fitting)
+
+# Initialize and train the model on scaled data
+rf = RandomForestClassifier(random_state=42)
+rf.fit(X_train, y_train)  # Train on scaled training data
+
+rf_predictions = rf.predict(X_test)
+
+rf_accuracy = accuracy_score(y_test, rf_predictions)
+rf_classification_report = classification_report(y_test, rf_predictions, output_dict=True)
+rf_confusion_matrix = confusion_matrix(y_test, rf_predictions)
+
+# Convert accuracy to percentage with 2 decimal points
+rf_accuracy_percentage = rf_accuracy * 100
+
+# Convert classification report to DataFrame and round to 2 decimal points
+rf_classification_report_df = pd.DataFrame(rf_classification_report).transpose().round(2)
+
+# Use tabulate to display the classification report
+print(f"Random Forest Classifier Accuracy: {rf_accuracy_percentage:.2f}%")
+print("\nRandom Forest Classification Report:")
+print(tabulate(rf_classification_report_df, headers='keys', tablefmt='pretty'))
+
+
+```
+
+
+```{python}
+##TRYYYYYY
+# qtry = df.drop(columns=['livearea', 'yrbuilt', 'numbdrm', 'numbaths', 'built_period', 'parcel'])
+
+```
+
+
+
+### QUESTION|TASK 3
+
+__Justify your classification model by discussing the most important features selected by your model. This discussion should include a feature importance chart and a description of the features.__
+
+The Random Forest model identifies the most important features based on their importance scores. These features play a key role in the model’s decision-making process and contribute to accurately predicting whether a house was built before or after 1980.
+
+```{python}
+# Drop unnecessary columns
+df_q3 = df.drop(columns=['livearea',  'yrbuilt', 
+                       'numbdrm', 'numbaths', 'built_period', 
+                      'parcel'])
+# Add a random noise feature
+np.random.seed(42)
+df_q3['random_noise'] = np.random.rand(len(df_q3))
+
+# Convert categorical columns to numeric (if any)
+categorical_cols = df_q3.select_dtypes(include=['object', 'category']).columns
+df_q3 = pd.get_dummies(df_q3, columns=categorical_cols, drop_first=True)
+
+# Split data into features and target variable
+X = df_q3.drop(columns=['before1980'])
+y = df_q3['before1980']
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Standardize the data
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Initialize the Random Forest classifier
+rf_classifier = RandomForestClassifier(n_estimators=10, max_depth=4, random_state=42)
+rf_classifier.fit(X_train_scaled, y_train)
+
+# Get feature importances
+feature_importances = rf_classifier.feature_importances_
+features = X.columns
+
+# Create a DataFrame for feature importances
+feature_importances_df = (
+    pd.DataFrame({
+        'Feature': features,
+        'Importance (%)': (feature_importances * 100).round(2)  # Convert to percentage and round
+    })
+    .sort_values(by='Importance (%)', ascending=False)
+)
+
+# Display the top 10 most important features
+most_important_features = feature_importances_df.head(5)
+print("Most Important Features:\n")
+print(most_important_features.to_string(index=False))
+
+# Plot feature importances
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Importance (%)', y='Feature', data=most_important_features, palette='viridis')
+plt.title('Top 10 Feature Importances from Random Forest Classifier')
+plt.xlabel('Importance (%)')
+plt.ylabel('Feature')
+plt.tight_layout()
+plt.show()
+
+```
+
+
+
+
+
+
+### QUESTION|TASK 4
+
+__Describe the quality of your classification model using 2-3 different evaluation metrics. You also need to explain how to interpret each of the evaluation metrics you use.__
+
+
+_Insights: To understand how well our model did, we can utilize various evaluation metrics. The Random Forest model used achieved an accuracy score of 91%. `Accuracy is the proportion of correctly predicted instances in the model`. Other evaluation metrics include precision (`proportion of true positive predictions amoung all positive predictions made`), recall (`proportion of true positive predictions among all all actual positive instances`), and F1-score (`mean of precision and recall`)._
+
+```{python}
+print("\nRandom Forest Classification Report:")
+print(tabulate(rf_classification_report_df, headers='keys', tablefmt='pretty'))
+```
+
