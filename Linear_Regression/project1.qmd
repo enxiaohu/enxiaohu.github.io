@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Client Report - [Car Selling Price]"
+subtitle: "Check if I made a profit when I sold my car according to the market trend."
+author: "Erin Hu"
 format:
   html:
     self-contained: true
@@ -25,5 +25,100 @@ execute:
     
 ---
 
-### Paste in a template
-change
+### CarSellingPrice
+
+```{r}
+library(readxl)
+library(car)
+library(tidyverse)
+library(DT)
+library(pander)
+library(ggplot2)
+carprice <- read_excel("~/Desktop/carprice.xlsx")
+```
+
+Here is my report for my old car (BMWX3), which I bought last year and sold it this summer. The price I bought was 9k, and the mileage at that time was 155000 miles, and the price I sold is 6.5k, and the mileage was 161250 miles.
+
+## Graphical Summaries
+
+This graph is based on the marketing price of the BMW X3. The pink dot on the graph represents the price at which I purchased my car, while the red dot represents the price at which I sold it. The price difference between these two points is $2,500 (excluding factors like gas or additional expenses). This essentially reflects the depreciation in value my car experienced per mile driven. During my ownership of the car, I drove a total of 6,250 miles. By simple calculation, this translates to a cost of $0.4 per mile. However, when we use the equation derived from the trend line, the suggested selling price for my car is in between $3135 and $1063. And the best price to see my car is $5775.5.
+
+
+
+```{r}
+ggplot(carprice, aes(x=Mileage, y =Price)) +
+  geom_point() +
+  geom_point(x = 155000, y = 9000, size = 3, color = "hotpink") + 
+  geom_text(x = 155000, y = 11000 , label = "The price when I bought my car", color = "navy", size = 3) +
+  geom_point(x = 161250, y = 6500, size = 3, color = "firebrick") + 
+  geom_text(x = 161250, y = 4000 , label = "The price when I sold my car", color = "navy", size = 3) +
+  labs(x="The Mileage of the Vehicel(miles)", y="The Price of the Vehicel(dollars)", title = "The Price of Vehicles according to their Mileage") +
+  stat_function(fun=function(x) exp(10.92 - 0.00001401*x), add=TRUE, col="firebrick") +
+  geom_segment(x=161250, xend=161250, y=3135.847, yend=10637.18, 
+               color="skyblue", alpha=0.01, lwd=3) +
+
+    theme_minimal()
+```
+
+## Hypothesis
+
+$$
+\underset{\text{Log Car Price}}{\log(Y_i)} = \overbrace{\beta_0}^{\text{Y-int}} + \overbrace{\beta_1}^{\text{Slope}} \underset{\text{Mileage}}{X_i} + \epsilon_i \quad \text{Where } \epsilon_i \sim N(0, \sigma^2)
+$$
+
+**Hypothesis Test:**
+
+$$
+H_0: \beta_1 = 0 \\
+H_a: \beta_1 \neq 0
+$$
+
+## Analysis
+
+This the graph of all the data that I collect. The blue line is the regression line of the trend, but of course, the price in the real world is not gonna be a stright line.
+
+```{r}
+ggplot(carprice, aes(x=Mileage, y =Price)) +
+  geom_point() +
+  geom_smooth(method ="lm", formula = y~x, se=FALSE) +
+  labs(x="The Mileage of the Vehicel(miles)", y="The Price of the Vehicel(dollars)", title = "The Price of Vehicles according to their Mileage") +
+
+    theme_minimal()
+```
+
+So I tried to find what is my λ by using boxCox function.
+
+```{r}
+carprice.lm <- lm(Price ~ Mileage, data=carprice)
+boxCox(carprice.lm)
+```
+
+This graph helps me to decide what is my λ, 0 seems like to be my best fit, so I will choose my λ to be 0. Also in this way, I will know that I have to use the log function as the way to transform my data. That’s the best since log carry the interpretation with it.
+
+```{r}
+carprice.lm.t <- lm(log(Price) ~ Mileage, data=carprice)
+summary(carprice.lm.t) |> 
+  pander()
+```
+
+This is the regression line after I transform my data. And from the table, I will know 10.92 is my intercept, and -0.00001401 is my slope.
+
+$$
+\underset{\text{Log Car Price}}{\log(Y'_i)} = 10.92 - 0.00001401 \underset{\text{Mileage}}{X_i}
+$$
+
+And if I want to put this into the real world, this means I suppose to sell my car at the price of 7.5k.
+
+After the transformation, this equation can help me to find the best price that I should sell my car.
+
+$$
+\underset{\text{Car Price}}{\hat{Y}_i} = e^{10.92 - 0.00001401 \underset{\text{Mileage}}{X_i}}
+$$
+
+```{r}
+mypred<- predict(carprice.lm.t, data.frame(Mileage=161250), interval="prediction")
+pander(exp(mypred))
+```
+
+After I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!
+
