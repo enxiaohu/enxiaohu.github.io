@@ -74,10 +74,10 @@ website:
           file: exploration.qmd
         - text: "---"
         - text: "Project 1"
-          file: Linear_Regression/project1.qmd
+          file: Linear_Regression/Car_Selling_Price.qmd
         - text: "---"
         - text: "Project 2"
-          file: Linear_Regression/project2.qmd
+          file: Linear_Regression/Retail_Predictio.qmd
         - text: "---"
         - text: "Project 3"
           file: Linear_Regression/project3.qmd
