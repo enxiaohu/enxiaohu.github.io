@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Client Report - [Retail Analysis]"
+subtitle: "Use Linear Regression to Predict Walmart's Weekly Sales"
+author: "[Erin Hu]"
 format:
   html:
     self-contained: true
@@ -25,4 +25,341 @@ execute:
     
 ---
 
-### Paste in a template
+
+```{r}
+library(readr)
+library(car)
+library(tidyverse)
+library(mosaic)
+# library(reshape2)
+library(readr)
+library(plotly)
+library(stringi)
+library(ggplot2)
+library(dplyr)
+library(pander)
+Features_data_set <- read_csv("~/Desktop/Featuresdataset.csv",
+                              col_types = cols(Date = col_date(format = "%d/%m/%Y")))
+# View(Features_data_set)
+
+sales_data_set <- read_csv("~/Desktop/salesdataset.csv",
+col_types = cols(Date = col_date(format = "%d/%m/%Y")))
+#View(sales_data_set)
+
+stores_data_set <- read_csv("~/Desktop/storesdataset.csv", show_col_types = FALSE)
+#View(stores_data_set)
+```
+
+## Backgroung
+
+I got the data from Kaggle about the Walmart stores located in different regions. Each store contains a number of departments, and my tasks is to predict the department-wide sales for each store.
+
+In addition, Walmart runs several promotional markdown events throughout the year. These markdowns precede prominent holidays, the four largest of which are the Super Bowl, Labor Day, Thanksgiving, and Christmas. The weeks including these holidays are weighted five times higher in the evaluation than non-holiday weeks. Part of the challenge presented is modeling the effects of markdowns on these holiday weeks in the absence of complete/ideal historical data.
+
+## Result
+
+This is the summary of my linear model of Walmart Weekly sales, and the validation adjust R square is 0.395, which means my model is 39.5% close to the market price trend.
+
+The math model I found to predict Walmart weekly sales is:
+
+$$
+Y_i = \beta_0 + \beta_1 X_{MarkDown1} + \beta_2 X_{MarkDown2} + \beta_3 X_{MarkDown3} + \beta_4 X_{MarkDown5} \\
++ \beta_5 X_{CPIgroup2} + \beta_6 X_{CPIgroup3} + \beta_7 X_{CPIgroup4} \\
++ \beta_8 X_{Unemployment} \\
++ \beta_9 X_{Deptgroup2} + \beta_{10} X_{Deptgroup3} + \beta_{11} X_{Deptgroup4} + \beta_{12} X_{Deptgroup5}
+$$
+
+The estimate model I found to predict Walmart weekly sales is:
+
+$$
+\hat{Y} = -1392.556 + 0.1383814 X_{MarkDown1} + 0.05732099 X_{MarkDown2} + 0.1606509 X_{MarkDown3} \\
++ 0.1821851 X_{MarkDown5} + 6887.389 X_{CPIgroup2} + 6527.225 X_{CPIgroup3} \\
++ 5101.357 X_{CPIgroup4} - 454.8256 X_{Unemployment} \\
++ 4919.982 X_{Deptgroup2} + 11580.88 X_{Deptgroup3} \\
++ 16454.77 X_{Deptgroup4} + 37098.27 X_{Deptgroup5}
+$$
+
+## Orginal Model
+The model I use for this analysis is the estimated line model:
+
+$$
+\underset{\text{estimated mean weekly sales}}{\hat{Y}_i} = b_0 + b_1 X_i \quad \underset{\text{estimated regression equation}}{}
+$$
+
+## Analysis
+For those curious about my model’s development process, here’s an overview:
+
+Given the extensive dataset I obtained, consisting of 423,325 data entries spread across 99 departments, I sought to optimize my model’s alignment with market trends. To accomplish this, I segmented the departments into five groups based on their weekly sales and organized them into four CPI groups using the summarized values.
+
+```{r}
+sales_feature <- sales_data_set  |> 
+  full_join(Features_data_set, by = c("Date", "Store"))
+#View(sales_feature)
+
+sales_features_no_na <- sales_feature %>% replace(is.na(sales_feature), 0)
+
+sales_features_no_na <- sales_features_no_na |> 
+  group_by(Dept) |> 
+    mutate(median= median(Weekly_Sales), 
+           dept_group=case_when(median < 3622~"group1",
+                                median < 9253~"group2",
+                                median < 14147~"group3",
+                                median < 18249~"group4",
+                                median < 61817~"group5")) 
+
+#View(sales_features_no_na)
+
+
+
+sales_features_no_na <- sales_features_no_na |> 
+  group_by(CPI) |> 
+    mutate(median= median(CPI), 
+           CPI_group=case_when(CPI < 10~"1",
+                                CPI < 150~"2",
+                                CPI < 210~"3",
+                                TRUE~"4"
+                                )) 
+
+
+#View(sales_features_no_na)
+
+sales_features_no_na <- sales_features_no_na |> 
+  mutate(IsHoliday.x = ifelse(IsHoliday.x %in% c("TRUE"),1,0)) 
+```
+
+```{r}
+mylm8 <- lm(Weekly_Sales ~ 
+              #I(Temperature^2) + 
+              MarkDown1 + 
+              MarkDown2 + 
+              MarkDown3 + 
+              MarkDown5 + 
+              CPI_group + 
+              Unemployment + 
+              dept_group, 
+            data = sales_features_no_na)
+summary(mylm8)
+```
+
+## Validation
+```{r}
+set.seed(121)
+
+num_rows <- 1000 #1460 total
+keep <- sample(1:nrow(sales_features_no_na), num_rows)
+
+mytrain <- sales_features_no_na[keep, ] #Use this in the lm(..., data=mytrain) it is like "rbdata"
+
+mytest <- sales_features_no_na[-keep, ]
+
+lm.all.train <- lm(Weekly_Sales ~ 
+              #I(Temperature^2) + 
+              MarkDown1 + 
+              MarkDown2 + 
+              MarkDown3 + 
+              MarkDown5 + 
+              CPI_group + 
+              Unemployment + 
+              dept_group, 
+            data = mytrain)
+
+
+
+yht <- predict(lm.all.train, newdata=mytest)
+
+  # Compute y-bar
+  ybar <- mean(mytest$Weekly_Sales) #Yi is given by Ynew from the new sample of data
+  
+  # Compute SSTO
+  SSTO <- sum( (mytest$Weekly_Sales - ybar)^2 )
+  
+  # Compute SSE for each model using y - yhat
+  SSEt <- sum( (mytest$Weekly_Sales - yht)^2 )
+
+  
+  # Compute R-squared for each
+  rst <- 1 - SSEt/SSTO
+
+  
+  # Compute adjusted R-squared for each
+  n <- length(mytest$Weekly_Sales) #sample size
+  pt <- length(coef(lm.all.train)) #num. parameters in model
+
+  rsta <- 1 - (n-1)/(n-pt)*SSEt/SSTO
+
+  
+
+my_output_table2 <- data.frame(Model = c("True"), `Original R2` = c( summary(lm.all.train)$r.squared), `Orig. Adj. R-squared` = c( summary(lm.all.train)$adj.r.squared), `Validation R-squared` = c(rst), `Validation Adj. R^2` = c(rsta))
+
+colnames(my_output_table2) <- c("Model", "Original $R^2$", "Original Adj. $R^2$", "Validation $R^2$", "Validation Adj. $R^2$")
+
+knitr::kable(my_output_table2, escape=TRUE, digits=4)
+```
+
+According to the table provided, the adjusted R-square for my validation stands at 39.5%. While it falls short of my desired outcome, it’s important to note that achieving a high validation score is challenging given the substantial size and complexity of the dataset. However, this could be an area for further exploration and improvement in the future.
+
+## Residual Plots & Regression Assumptions
+
+```{r}
+plot(lm.all.train, which=1:2)
+```
+
+```{r}
+plot(lm.all.train$residuals, ylab="Residuals")
+```
+
+In the next phase, I aim to check if my model meets certain assumptions. Looking at the first plot of residuals versus fitted values, I notice a “megaphone” pattern, which isn’t what I anticipated. This pattern suggests that the error varies inconsistently across different values of X. Also, when examining the QQ-plot, it seems that both the residuals and error terms don’t follow a normal distribution. Moreover, the plot of residuals against their order displays a noticeable pattern, indicating a possible lack of independence in the errors. These plots collectively raise doubts about the reliability of my model. I’m now considering whether applying a transformation could help address these concerns.
+
+## Transformation
+Once I made the decision to employ a transformation, I initially utilized the boxCox function to determine the appropriate value of λ. This process aimed to assist me in selecting the most suitable transformation for my data.
+
+```{r}
+library(car)
+sales_features_no_na$Weekly_Sales2 <- ifelse(sales_features_no_na$Weekly_Sales <1, 1,sales_features_no_na$Weekly_Sales)
+
+
+boxCox(lm(Weekly_Sales2 ~ 
+              #I(Temperature^2) + 
+              MarkDown1 + 
+              MarkDown2 + 
+              MarkDown3 + 
+              MarkDown5 + 
+              CPI_group + 
+              Unemployment + 
+              dept_group, data=sales_features_no_na))
+```
+
+Based on the depicted graph, it appears that my optimal \(\lambda\) value is around **0.25**. Consequently, I’ve identified that employing the transformation formula \[Y' = \sqrt{Y}\] would be most suitable for my dataset.
+
+```{r}
+lmt <- lm(sqrt(sqrt(Weekly_Sales2)) ~ 
+              #I(Temperature^2) + 
+              MarkDown1 + 
+              MarkDown2 + 
+              MarkDown3 + 
+              MarkDown5 + 
+              CPI_group + 
+              Unemployment + 
+              dept_group, data=sales_features_no_na)
+summary(lmt)
+```
+
+Here’s my updated model post-transformation, indicating an improved adjusted R-square of 50%, which I find quite satisfying. However, I still need to verify whether the transformation has effectively addressed the issues observed in my diagnostic plots and also my validation r-square.
+
+```{r}
+plot(lmt, which=1:2)
+```
+
+```{r}
+plot(lmt$residuals, ylab="Residuals")
+```
+
+Upon reviewing the diagnostic plots, it’s evident that the transformation did not resolve the issues; in fact, it appears to have exacerbated them. This prompts further concern. Additionally, I’m curious about the status of my validation R-square.
+
+```{r}
+num_rows <- round(423325*.70)
+keep <- sample(1:nrow(sales_features_no_na), num_rows)
+
+mytrain <- sales_features_no_na[keep, ] #Use this in the lm(..., data=mytrain) it is like "rbdata"
+
+mytest <- sales_features_no_na[-keep, ]
+
+lm.all.train <- lm(sqrt(sqrt(Weekly_Sales2))~ 
+              #I(Temperature^2) + 
+              MarkDown1 + 
+              MarkDown2 + 
+              MarkDown3 + 
+              MarkDown5 + 
+              CPI_group + 
+              Unemployment + 
+              dept_group, 
+            data = mytrain)
+
+
+
+yht <- predict(lm.all.train, newdata=mytest)^4
+
+  # Compute y-bar
+  ybar <- mean(mytest$Weekly_Sales) #Yi is given by Ynew from the new sample of data
+  
+  # Compute SSTO
+  SSTO <- sum( (mytest$Weekly_Sales - ybar)^2 )
+  
+  # Compute SSE for each model using y - yhat
+  SSEt <- sum( (mytest$Weekly_Sales - yht)^2 )
+
+  
+  # Compute R-squared for each
+  rst <- 1 - SSEt/SSTO
+
+  
+  # Compute adjusted R-squared for each
+  n <- length(mytest$Weekly_Sales) #sample size
+  pt <- length(coef(lm.all.train)) #num. parameters in model
+
+  rsta <- 1 - (n-1)/(n-pt)*SSEt/SSTO
+
+  
+
+my_output_table2 <- data.frame(Model = c("True"), `Original R2` = c( summary(lm.all.train)$r.squared), `Orig. Adj. R-squared` = c( summary(lm.all.train)$adj.r.squared), `Validation R-squared` = c(rst), `Validation Adj. R^2` = c(rsta))
+
+colnames(my_output_table2) <- c("Model", "Original $R^2$", "Original Adj. $R^2$", "Validation $R^2$", "Validation Adj. $R^2$")
+
+knitr::kable(my_output_table2, escape=TRUE, digits=4)
+```
+
+Observing the validation R-square, it’s apparent that it has significantly worsened. Coupled with the persisting issues in my diagnostic plots, it’s clear that employing the transformation is not suitable for my model.
+
+## Conditions
+Based on my model, I have created the graph below with specific conditions to enhance understanding and interpretation for individuals.
+
+In this scenario, ‘y’ represents the weekly sales of Walmart, while ‘x’ denotes Unemployment. The consistently flat lines in the graph suggest that fluctuations in the unemployment rate do not significantly impact weekly sales. This finding is logical since, regardless of economic conditions, people generally need to purchase groceries for their sustenance.
+
+The five distinct lines in the graph correspond to department groups 1 through 5. It’s observable that department group 1 has the smallest y-intercept and is positioned at the lower end, while department group 5 exhibits the highest y-intercept, indicating the largest sales volume. This discrepancy implies that different departments within Walmart might exhibit varying levels of weekly sales. Unfortunately, due to the dataset’s lack of specific department information, determining which departments these groups represent is challenging. However, according to data from Statista, the grocery department stands out with the highest sales, potentially aligning with department group 5. Nevertheless, without explicit details in the dataset, definitive conclusions cannot be drawn regarding the department representation.
+
+```{r}
+plot(Weekly_Sales ~ Unemployment, 
+     data=sales_features_no_na, 
+     pch = 16, 
+     cex = 0.5, 
+     col=as.factor(dept_group),main="Weekly sales related to different departments")
+legend("topleft", bty="n", legend=c("Department group=1","Department group=2", "Department group=3", "Department group=4","Department group=5"), col=c("cyan","black","red","green","blue"), lty=1)
+
+
+b <- coef(mylm8)
+
+
+MarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=0;dept_groupgroup4=0;dept_groupgroup5=0;i=5
+#drawit <- function(MarkDown1, MarkDown2, MarkDown3, MarkDown5,CPI_group,Unemployment,dept_group ) 
+curve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname="Unemployment",col=palette()[i], add=TRUE)
+
+MarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=1;dept_groupgroup3=0;dept_groupgroup4=0;dept_groupgroup5=0;i=1
+#drawit <- function(MarkDown1, MarkDown2, MarkDown3, MarkDown5,CPI_group,Unemployment,dept_group ) 
+curve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname="Unemployment",col=palette()[i], add=TRUE)
+
+
+MarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=1;dept_groupgroup4=0;dept_groupgroup5=0;i=2
+curve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname="Unemployment",col=palette()[i], add=TRUE)
+
+
+MarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=0;dept_groupgroup4=1;dept_groupgroup5=0;i=3
+curve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname="Unemployment",col=palette()[i], add=TRUE)
+ 
+ 
+MarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=0;dept_groupgroup4=0;dept_groupgroup5=1;i=4
+curve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname="Unemployment",col=palette()[i], add=TRUE)
+```
+
+## Prediction
+
+Utilizing the model I developed enables the prediction of Walmart’s weekly sales. For instance, under specific conditions—such as a CPI rate ranging from 10 to 150, an unemployment rate of 1, and department group 2—the projected weekly sales for Walmart fall within the range of $200.4 to $42,331.
+
+```{r}
+mypred<- predict(lmt, data.frame(MarkDown1=0,MarkDown2=0,MarkDown3=0,MarkDown5=0,CPI_group="2",Unemployment=1,dept_group="group2"), interval="prediction")^4
+library(pander)
+pander(mypred)
+```
+
+## Furture Study
+
+In future studies, my aim is to enhance the validation R-square to develop a superior model that aligns more accurately with market trends. Additionally, I aspire to acquire additional dataset information to further clarify and improve interpretability.
