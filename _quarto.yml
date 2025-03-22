@@ -77,7 +77,7 @@ website:
           file: Linear_Regression/Car_Selling_Price.qmd
         - text: "---"
         - text: "Project 2"
-          file: Linear_Regression/Retail_Predictio.qmd
+          file: Linear_Regression/Retail_Prediction.qmd
         - text: "---"
         - text: "Project 3"
           file: Linear_Regression/project3.qmd
