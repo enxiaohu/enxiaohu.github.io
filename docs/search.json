@@ -456,20 +456,14 @@
     "href": "full_stack.html",
     "title": "about me",
     "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Full Stack"
-    ]
+    "text": "MarkDown Basics"
   },
   {
     "objectID": "full_stack.html#title-2-header",
     "href": "full_stack.html#title-2-header",
     "title": "about me",
     "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Full Stack"
-    ]
+    "text": "MarkDown Basics"
   },
   {
     "objectID": "index.html#title-2-linear-regression",
@@ -858,5 +852,33 @@
       "Linear Regression",
       "Project 1"
     ]
+  },
+  {
+    "objectID": "Linear_Regression/Car Selling_Price.html",
+    "href": "Linear_Regression/Car Selling_Price.html",
+    "title": "Client Report - [Car Selling Price]",
+    "section": "",
+    "text": "Show the code\nlibrary(readxl)\nlibrary(car)\nlibrary(tidyverse)\nlibrary(DT)\nlibrary(pander)\nlibrary(ggplot2)\ncarprice &lt;- read_excel(\"~/Desktop/carprice.xlsx\")\n\n\nHere is my report for my old car (BMWX3), which I bought last year and sold it this summer. The price I bought was 9k, and the mileage at that time was 155000 miles, and the price I sold is 6.5k, and the mileage was 161250 miles."
+  },
+  {
+    "objectID": "Linear_Regression/Car Selling_Price.html#graphical-summaries",
+    "href": "Linear_Regression/Car Selling_Price.html#graphical-summaries",
+    "title": "Client Report - [Car Selling Price]",
+    "section": "Graphical Summaries",
+    "text": "Graphical Summaries\nThis graph is based on the marketing price of the BMW X3. The pink dot on the graph represents the price at which I purchased my car, while the red dot represents the price at which I sold it. The price difference between these two points is $2,500 (excluding factors like gas or additional expenses). This essentially reflects the depreciation in value my car experienced per mile driven. During my ownership of the car, I drove a total of 6,250 miles. By simple calculation, this translates to a cost of $0.4 per mile. However, when we use the equation derived from the trend line, the suggested selling price for my car is in between $3135 and $1063. And the best price to see my car is $5775.5.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_point(x = 155000, y = 9000, size = 3, color = \"hotpink\") + \n  geom_text(x = 155000, y = 11000 , label = \"The price when I bought my car\", color = \"navy\", size = 3) +\n  geom_point(x = 161250, y = 6500, size = 3, color = \"firebrick\") + \n  geom_text(x = 161250, y = 4000 , label = \"The price when I sold my car\", color = \"navy\", size = 3) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n  stat_function(fun=function(x) exp(10.92 - 0.00001401*x), add=TRUE, col=\"firebrick\") +\n  geom_segment(x=161250, xend=161250, y=3135.847, yend=10637.18, \n               color=\"skyblue\", alpha=0.01, lwd=3) +\n\n    theme_minimal()"
+  },
+  {
+    "objectID": "Linear_Regression/Car Selling_Price.html#hypothesis",
+    "href": "Linear_Regression/Car Selling_Price.html#hypothesis",
+    "title": "Client Report - [Car Selling Price]",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\n\\underset{\\text{Log Car Price}}{\\log(Y_i)} = \\overbrace{\\beta_0}^{\\text{Y-int}} + \\overbrace{\\beta_1}^{\\text{Slope}} \\underset{\\text{Mileage}}{X_i} + \\epsilon_i \\quad \\text{Where } \\epsilon_i \\sim N(0, \\sigma^2)\n\nHypothesis Test:\n\nH_0: \\beta_1 = 0 \\\\\nH_a: \\beta_1 \\neq 0"
+  },
+  {
+    "objectID": "Linear_Regression/Car Selling_Price.html#analysis",
+    "href": "Linear_Regression/Car Selling_Price.html#analysis",
+    "title": "Client Report - [Car Selling Price]",
+    "section": "Analysis",
+    "text": "Analysis\nThis the graph of all the data that I collect. The blue line is the regression line of the trend, but of course, the price in the real world is not gonna be a stright line.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_smooth(method =\"lm\", formula = y~x, se=FALSE) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n\n    theme_minimal()\n\n\n\n\n\n\n\n\n\nSo I tried to find what is my λ by using boxCox function.\n\n\nShow the code\ncarprice.lm &lt;- lm(Price ~ Mileage, data=carprice)\nboxCox(carprice.lm)\n\n\n\n\n\n\n\n\n\nThis graph helps me to decide what is my λ, 0 seems like to be my best fit, so I will choose my λ to be 0. Also in this way, I will know that I have to use the log function as the way to transform my data. That’s the best since log carry the interpretation with it.\n\n\nShow the code\ncarprice.lm.t &lt;- lm(log(Price) ~ Mileage, data=carprice)\nsummary(carprice.lm.t) |&gt; \n  pander()\n\n\n\n\n\n\n\n\n\n\n\n\n \nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\n(Intercept)\n10.92\n0.09799\n111.4\n3.2e-28\n\n\nMileage\n-1.401e-05\n1.069e-06\n-13.11\n5.731e-11\n\n\n\n\nFitting linear model: log(Price) ~ Mileage\n\n\n\n\n\n\n\n\nObservations\nResidual Std. Error\nR^2\nAdjusted R^2\n\n\n\n\n21\n0.2699\n0.9005\n0.8952\n\n\n\n\n\nThis is the regression line after I transform my data. And from the table, I will know 10.92 is my intercept, and -0.00001401 is my slope.\n\n\\underset{\\text{Log Car Price}}{\\log(Y'_i)} = 10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}\n\nAnd if I want to put this into the real world, this means I suppose to sell my car at the price of 7.5k.\nAfter the transformation, this equation can help me to find the best price that I should sell my car.\n\n\\underset{\\text{Car Price}}{\\hat{Y}_i} = e^{10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}}\n\n\n\nShow the code\nmypred&lt;- predict(carprice.lm.t, data.frame(Mileage=161250), interval=\"prediction\")\npander(exp(mypred))\n\n\n\n\n\n\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n5776\n3136\n10637\n\n\n\n\n\nAfter I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!"
   }
 ]
