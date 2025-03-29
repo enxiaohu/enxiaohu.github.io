@@ -1,9 +1,8 @@
 ---
-layout: cv
-title: Erin Hu's CV
+layout: Resume
+title: Erin Hu's Resume
 ---
 # Erin Hu
-Data analyst, Business analyst, Statistician, Mathematician.
 
 <div id="webaddress">
 | <a href="www.linkedin.com/in/erinhu0619">My Linkdin page</a>
@@ -18,9 +17,9 @@ Senior student at BYU - Idaho
 Hard Skill: Data Analysis(R studio, SQL, Power BI), Data Visualization(Tableau), Microsoft Excel
 
 Soft Skills: Cross-functional Team Collaboration, Strong Attention to Detail, Analytical Thinking, Problem Solving
-### Research interests
 
-Finance, business direction, operation.
+### Research interests
+business direction, operation.
 
 
 ## Education
@@ -34,13 +33,13 @@ __Brigham Young University, Idaho__
 ## Occupation
 
 `Sep 2024 - Present`
-__BYUI__, Idaho
+__Data Visualization Specialist 2__ , __BYUI__, Idaho
 - Initiated new visualized statistics, leading to catching discrepancies between sources using Power BI and
 Presenting indicators on a weekly basis
 - Generated time series charts and KPI dashboards to monitor annual performance, collaborating with
 executive leadership to enhance workflow strategies through the utilization of DAX and Query
 
-`April 2024 - Sep 2024`
+`April 2024 - Sep 2024` __Business Analyst Intern__ , 
 __The Church of Jesus Christ of Latter Day Saints__, Utah
 
 - Processed 4 million rows of data and organized a comprehensive data dictionary
@@ -49,6 +48,3 @@ __The Church of Jesus Christ of Latter Day Saints__, Utah
 - Contributed to analytical projects, data validation, and assisted in data interpretation tasks
 
 
-<!-- ### Footer
-
-Last updated: May 2013 -->
