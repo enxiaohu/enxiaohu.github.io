@@ -880,5 +880,19 @@
     "title": "Client Report - [Car Selling Price]",
     "section": "Analysis",
     "text": "Analysis\nThis the graph of all the data that I collect. The blue line is the regression line of the trend, but of course, the price in the real world is not gonna be a stright line.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_smooth(method =\"lm\", formula = y~x, se=FALSE) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n\n    theme_minimal()\n\n\n\n\n\n\n\n\n\nSo I tried to find what is my λ by using boxCox function.\n\n\nShow the code\ncarprice.lm &lt;- lm(Price ~ Mileage, data=carprice)\nboxCox(carprice.lm)\n\n\n\n\n\n\n\n\n\nThis graph helps me to decide what is my λ, 0 seems like to be my best fit, so I will choose my λ to be 0. Also in this way, I will know that I have to use the log function as the way to transform my data. That’s the best since log carry the interpretation with it.\n\n\nShow the code\ncarprice.lm.t &lt;- lm(log(Price) ~ Mileage, data=carprice)\nsummary(carprice.lm.t) |&gt; \n  pander()\n\n\n\n\n\n\n\n\n\n\n\n\n \nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\n(Intercept)\n10.92\n0.09799\n111.4\n3.2e-28\n\n\nMileage\n-1.401e-05\n1.069e-06\n-13.11\n5.731e-11\n\n\n\n\nFitting linear model: log(Price) ~ Mileage\n\n\n\n\n\n\n\n\nObservations\nResidual Std. Error\nR^2\nAdjusted R^2\n\n\n\n\n21\n0.2699\n0.9005\n0.8952\n\n\n\n\n\nThis is the regression line after I transform my data. And from the table, I will know 10.92 is my intercept, and -0.00001401 is my slope.\n\n\\underset{\\text{Log Car Price}}{\\log(Y'_i)} = 10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}\n\nAnd if I want to put this into the real world, this means I suppose to sell my car at the price of 7.5k.\nAfter the transformation, this equation can help me to find the best price that I should sell my car.\n\n\\underset{\\text{Car Price}}{\\hat{Y}_i} = e^{10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}}\n\n\n\nShow the code\nmypred&lt;- predict(carprice.lm.t, data.frame(Mileage=161250), interval=\"prediction\")\npander(exp(mypred))\n\n\n\n\n\n\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n5776\n3136\n10637\n\n\n\n\n\nAfter I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!"
+  },
+  {
+    "objectID": "index.html#linear-regression",
+    "href": "index.html#linear-regression",
+    "title": "Erin",
+    "section": "",
+    "text": "MarkDown Basics"
+  },
+  {
+    "objectID": "index.html#machhine-learning",
+    "href": "index.html#machhine-learning",
+    "title": "Erin",
+    "section": "Machhine Learning",
+    "text": "Machhine Learning\n\nHouse Prediction\n\n\nThe War with Star Wars"
   }
 ]

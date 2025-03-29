@@ -3,9 +3,12 @@ title: "Erin"
 subtitle: "my portfolio"
 # use quarto markdown to 
 ---
+##  Linear Regression 
+#### Car Selling Price
+#### Retail Prediction
+##  Machhine Learning
+#### House Prediction
+#### The War with Star Wars
 
-# Title 1 Machine Learning
-## Title 2 Linear Regression 
-## Title 3 change
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+
