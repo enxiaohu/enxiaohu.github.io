@@ -29,8 +29,6 @@ website:
         file: resume.qmd
       - text: "Linear Regression"
         file: exploration.qmd
-      - text: "Story Telling"
-        file: story_telling.qmd
       - text: "Machine Learning"
         file: ml.qmd
 
@@ -49,16 +47,7 @@ website:
           file: Linear_Regression/Car_Selling_Price.qmd
         - text: "Retail Prediction"
           file: Linear_Regression/Retail_Prediction.qmd
-    - title: "Story Telling"
-      style: "docked"
-      background: light
-      contents:
-        - text: "Story Telling"
-          file: story_telling.qmd
-        - text: "Project 1"
-          file: Story_Telling/project1.qmd
-        - text: "Project 2"
-          file: Story_Telling/project2.qmd
+
     - title: "Machine Learning"
       style: "docked"
       background: light
