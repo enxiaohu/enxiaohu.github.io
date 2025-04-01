@@ -68,7 +68,8 @@ website:
         - text: "Project 1"
           file: Machine_Learning/project1.qmd
         - text: "Project 2"
-  
+          file: Machine_Learning/project2.qmd
+
 format:  
   html:
     theme: #see this link to customize the theme with css (https://quarto.org/docs/output-formats/html-themes.html#dark-mode)
