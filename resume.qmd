@@ -2,11 +2,7 @@
 layout: Resume
 title: Erin Hu's Resume
 ---
-# Erin Hu
 
-<div id="webaddress">
-| <a href="https://www.linkedin.com/in/erinhu0619/">My Linkdin page</a>
-</div>
 
 
 ## Currently
