@@ -1,5 +1,5 @@
 ---
-title: "Client Report - [Can You Predict That?]"
+title: "Can You Predict That?"
 subtitle: "Using Random Forest to Determine if a Home Was Built Before 1980"
 author: "[Erin Hu]"
 format:

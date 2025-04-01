@@ -49,12 +49,6 @@ website:
           file: Linear_Regression/Car_Selling_Price.qmd
         - text: "Retail Prediction"
           file: Linear_Regression/Retail_Prediction.qmd
-        - text: "Project 3"
-          file: Linear_Regression/project3.qmd
-        - text: "Project 4"
-          file: Linear_Regression/project4.qmd
-        - text: "Project 5"
-          file: Linear_Regression/project5.qmd
     - title: "Story Telling"
       style: "docked"
       background: light
@@ -65,12 +59,6 @@ website:
           file: Story_Telling/project1.qmd
         - text: "Project 2"
           file: Story_Telling/project2.qmd
-        - text: "Project 3"
-          file: Story_Telling/project3.qmd
-        - text: "Project 4"
-          file: Story_Telling/project4.qmd
-        - text: "Project 5"
-          file: Story_Telling/project5.qmd
     - title: "Machine Learning"
       style: "docked"
       background: light
@@ -80,13 +68,6 @@ website:
         - text: "Project 1"
           file: Machine_Learning/project1.qmd
         - text: "Project 2"
-          file: Machine_Learning/project2.qmd
-        - text: "Project 3"
-          file: Machine_Learning/project3.qmd
-        - text: "Project 4"
-          file: Machine_Learning/project4.qmd
-        - text: "Project 5"
-          file: Machine_Learning/project5.qmd
   
 format:  
   html:
