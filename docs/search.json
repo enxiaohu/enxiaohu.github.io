@@ -1,139 +1,17 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Erin",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "index.html#title-2-header",
-    "href": "index.html#title-2-header",
-    "title": "Erin",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
     "objectID": "competition.html",
     "href": "competition.html",
     "title": "about me",
     "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Competition"
-    ]
+    "text": "MarkDown Basics"
   },
   {
     "objectID": "competition.html#title-2-header",
     "href": "competition.html#title-2-header",
     "title": "about me",
     "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Competition"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project3.html",
-    "href": "Cleansing_Projects/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 3"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project1.html",
-    "href": "Cleansing_Projects/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project4.html",
-    "href": "Cleansing_Projects/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Full_Stack/project2.html",
-    "href": "Full_Stack/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Full_Stack/project5.html",
-    "href": "Full_Stack/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Competition/project3.html",
-    "href": "Competition/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Competition",
-      "Project 3"
-    ]
-  },
-  {
-    "objectID": "Competition/project1.html",
-    "href": "Competition/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Competition",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Competition/project4.html",
-    "href": "Competition/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Competition",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Exploration/project2.html",
-    "href": "Cleansing_Exploration/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Cleansing_Exploration/project5.html",
-    "href": "Cleansing_Exploration/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
+    "text": "MarkDown Basics"
   },
   {
     "objectID": "story_telling.html",
@@ -153,535 +31,6 @@
     "text": "MarkDown Basics",
     "crumbs": [
       "Story Telling"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project3.html",
-    "href": "Machine_Learning/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Machine_Learning/project1.html",
-    "href": "Machine_Learning/project1.html",
-    "title": "Can You Predict That?",
-    "section": "",
-    "text": "Show the code\n# Data manipulation\nimport pandas as pd\nimport numpy as np\n# Data visualization\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\nfrom lets_plot import *\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n# Machine Learning models and tools\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.naive_bayes import GaussianNB\nfrom sklearn import tree\n# Model evaluation and metrics\nfrom sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold, cross_val_score\nfrom sklearn.metrics import (\n    accuracy_score, classification_report, confusion_matrix,\n    precision_score, recall_score, f1_score\n)\nfrom sklearn import metrics\nfrom sklearn.preprocessing import StandardScaler\n# Data display utilities\nfrom tabulate import tabulate\n# from plotnine import ggplot, aes, labs, geom_bar, theme,geom_line\n\ndf = pd.read_csv('https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv')\n# print(df.head())\n\n\n\nElevator Pitch\nThe analysis looked at home features and how they relate to when the home was built. It found important details that help decide if a home was built before 1980. Using a Random Forest classification model, we reached about 91% accuracy. Important factors include the number of bedrooms, number of bathrooms, and the style of the home. This model is a useful tool for grouping homes by the time they were built, which can help with marketing and making good decisions in real estate.\n\n\nQUESTION|TASK 1\nCreate 2-3 charts that evaluate potential relationships between the home variables and before1980. Explain what you learn from the charts that could help a machine learning algorithm.\nThe charts below show how different home features are related to whether a home was built before 1980. Understanding these relationships helps a machine learning algorithm by identifying which features are important for predicting the construction period. The line chart and bar chart both shows that there’s more hourses built before 1980.\n\n\nShow the code\nLetsPlot.setup_html()\n\n# Add a new column to indicate whether the house was built before or after 1980\ndf['built_period'] = df['yrbuilt'].apply(lambda x: 'before 1980' if x &lt;= 1980 else 'after 1980')\n\n# print(df['built_period'])\n\n# Group the data by 'numbdrm' and 'built_period' and count occurrences\ngrouped_data = df.groupby(['numbdrm', 'built_period']).size().reset_index(name='count')\n\n# Plot using Lets-Plot\ngg = ggplot(grouped_data, aes(x='numbdrm', y='count', color='built_period')) + \\\n     geom_line() + \\\n     ggtitle('Number of Bedrooms Built Before and After 1980') + \\\n     theme(axis_text_x=element_text(angle=45, hjust=1))\n\ngg.show()\n\n\n\n            \n            \n            \n\n\n   \n   \n\n\n\n\nShow the code\nfrom lets_plot import *\n\n# Initialize Lets-Plot\nLetsPlot.setup_html(isolated_frame=True)\n\n# Create a new column to classify homes built before or after 1980\ndf['built_period'] = df['yrbuilt'].apply(lambda x: 'before 1980' if x &lt;= 1980 else 'after 1980')\n\n# Group data by 'built_period' and count the number of homes\ngrouped_before1980 = df['built_period'].value_counts().reset_index()\ngrouped_before1980.columns = ['Built Period', 'numbaths']\n\n# Creating the bar plot using Lets-Plot\nplot = (ggplot(grouped_before1980, aes(x='Built Period', y='numbaths', fill='Built Period')) +\n        geom_bar(stat='identity') +\n        ggsize(800, 500) +\n        ggtitle('Number of Bathrooms: Built Before 1980 vs After 1980') +\n        xlab('Built Period') +\n        ylab('numbaths') +\n        theme(axis_text_x=element_text(angle=45, hjust=1)))\n\n# Display the plot\nplot.show()\n\n\n\n   \n       \n       \n   \n   \n          \n   \n   \n\n\n\n\n\nQUESTION|TASK 2\nBuild a classification model labeling houses as being built “before 1980” or “during or after 1980”. Your goal is to reach or exceed 90% accuracy. Explain your final model choice (algorithm, tuning parameters, etc) and describe what other models you tried.\nI chose the Random Forest model for this task because it is reliable and can handle many features effectively without overfitting. This model achieved an accuracy of 91%. In the future, I am interested in exploring other modeling methods to improve performance and gain new insights.\n\n\nShow the code\n# # random_state=42 helps ensure that the data split will be the same every time you run the code, making your results reproducible and easier to compare across different experiments\nq2 = df.drop(columns=['livearea',  'yrbuilt', \n                       'numbdrm', 'numbaths', 'built_period', \n                      'parcel'])\n\n#'stories', 'finbsmnt', 'nocars', 'basement', \n\nnp.random.seed(42)\n# q2['random_noise'] = np.random.rand(len(q2))\n\n# Split the data into features (X) and target (y)\nX = q2.drop('before1980', axis=1)\ny = q2['before1980']\n\n# Split the data into training and test sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# # I don't need to transform but also do it won't affect\n# scaler = StandardScaler()\n# X_train_scaled = scaler.fit_transform(X_train)  # Fit and transform on training data\n# X_test_scaled = scaler.transform(X_test)        # Transform test data (no fitting)\n\n# Initialize and train the model on scaled data\nrf = RandomForestClassifier(random_state=42)\nrf.fit(X_train, y_train)  # Train on scaled training data\n\nrf_predictions = rf.predict(X_test)\n\nrf_accuracy = accuracy_score(y_test, rf_predictions)\nrf_classification_report = classification_report(y_test, rf_predictions, output_dict=True)\nrf_confusion_matrix = confusion_matrix(y_test, rf_predictions)\n\n# Convert accuracy to percentage with 2 decimal points\nrf_accuracy_percentage = rf_accuracy * 100\n\n# Convert classification report to DataFrame and round to 2 decimal points\nrf_classification_report_df = pd.DataFrame(rf_classification_report).transpose().round(2)\n\n# Use tabulate to display the classification report\nprint(f\"Random Forest Classifier Accuracy: {rf_accuracy_percentage:.2f}%\")\nprint(\"\\nRandom Forest Classification Report:\")\nprint(tabulate(rf_classification_report_df, headers='keys', tablefmt='pretty'))\n\n\nRandom Forest Classifier Accuracy: 90.66%\n\nRandom Forest Classification Report:\n+--------------+-----------+--------+----------+---------+\n|              | precision | recall | f1-score | support |\n+--------------+-----------+--------+----------+---------+\n|      0       |   0.88    |  0.87  |   0.87   | 1710.0  |\n|      1       |   0.92    |  0.93  |   0.93   | 2873.0  |\n|   accuracy   |   0.91    |  0.91  |   0.91   |  0.91   |\n|  macro avg   |    0.9    |  0.9   |   0.9    | 4583.0  |\n| weighted avg |   0.91    |  0.91  |   0.91   | 4583.0  |\n+--------------+-----------+--------+----------+---------+\n\n\n\n\nShow the code\n##TRYYYYYY\n# qtry = df.drop(columns=['livearea', 'yrbuilt', 'numbdrm', 'numbaths', 'built_period', 'parcel'])\n\n\n\n\nQUESTION|TASK 3\nJustify your classification model by discussing the most important features selected by your model. This discussion should include a feature importance chart and a description of the features.\nThe Random Forest model identifies the most important features based on their importance scores. These features play a key role in the model’s decision-making process and contribute to accurately predicting whether a house was built before or after 1980.\n\n\nShow the code\n# Drop unnecessary columns\ndf_q3 = df.drop(columns=['livearea',  'yrbuilt', \n                       'numbdrm', 'numbaths', 'built_period', \n                      'parcel'])\n# Add a random noise feature\nnp.random.seed(42)\ndf_q3['random_noise'] = np.random.rand(len(df_q3))\n\n# Convert categorical columns to numeric (if any)\ncategorical_cols = df_q3.select_dtypes(include=['object', 'category']).columns\ndf_q3 = pd.get_dummies(df_q3, columns=categorical_cols, drop_first=True)\n\n# Split data into features and target variable\nX = df_q3.drop(columns=['before1980'])\ny = df_q3['before1980']\n\n# Split data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)\n\n# Standardize the data\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)\n\n# Initialize the Random Forest classifier\nrf_classifier = RandomForestClassifier(n_estimators=10, max_depth=4, random_state=42)\nrf_classifier.fit(X_train_scaled, y_train)\n\n# Get feature importances\nfeature_importances = rf_classifier.feature_importances_\nfeatures = X.columns\n\n# Create a DataFrame for feature importances\nfeature_importances_df = (\n    pd.DataFrame({\n        'Feature': features,\n        'Importance (%)': (feature_importances * 100).round(2)  # Convert to percentage and round\n    })\n    .sort_values(by='Importance (%)', ascending=False)\n)\n\n# Display the top 10 most important features\nmost_important_features = feature_importances_df.head(5)\nprint(\"Most Important Features:\\n\")\nprint(most_important_features.to_string(index=False))\n\n# Plot feature importances\nplt.figure(figsize=(10, 6))\nsns.barplot(x='Importance (%)', y='Feature', data=most_important_features, palette='viridis')\nplt.title('Top 10 Feature Importances from Random Forest Classifier')\nplt.xlabel('Importance (%)')\nplt.ylabel('Feature')\nplt.tight_layout()\nplt.show()\n\n\nMost Important Features:\n\n           Feature  Importance (%)\narcstyle_ONE-STORY           18.75\n           stories           16.50\narcstyle_TWO-STORY            9.58\n       gartype_Att            8.44\n         quality_B            6.36\n\n\n\n\n\n\n\n\n\n\n\nQUESTION|TASK 4\nDescribe the quality of your classification model using 2-3 different evaluation metrics. You also need to explain how to interpret each of the evaluation metrics you use.\nInsights: To understand how well our model did, we can utilize various evaluation metrics. The Random Forest model used achieved an accuracy score of 91%. Accuracy is the proportion of correctly predicted instances in the model. Other evaluation metrics include precision (proportion of true positive predictions amoung all positive predictions made), recall (proportion of true positive predictions among all all actual positive instances), and F1-score (mean of precision and recall).\n\n\nShow the code\nprint(\"\\nRandom Forest Classification Report:\")\nprint(tabulate(rf_classification_report_df, headers='keys', tablefmt='pretty'))\n\n\n\nRandom Forest Classification Report:\n+--------------+-----------+--------+----------+---------+\n|              | precision | recall | f1-score | support |\n+--------------+-----------+--------+----------+---------+\n|      0       |   0.88    |  0.87  |   0.87   | 1710.0  |\n|      1       |   0.92    |  0.93  |   0.93   | 2873.0  |\n|   accuracy   |   0.91    |  0.91  |   0.91   |  0.91   |\n|  macro avg   |    0.9    |  0.9   |   0.9    | 4583.0  |\n| weighted avg |   0.91    |  0.91  |   0.91   | 4583.0  |\n+--------------+-----------+--------+----------+---------+\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Machine Learning",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project4.html",
-    "href": "Machine_Learning/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Machine Learning",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "resume.html",
-    "href": "resume.html",
-    "title": "Erin Hu’s Resume",
-    "section": "",
-    "text": "My Linkdin page\n\n\n\nSenior student at BYU - Idaho\n\n\nHard Skill: Data Analysis(R studio, SQL, Power BI), Data Visualization(Tableau), Microsoft Excel\nSoft Skills: Cross-functional Team Collaboration, Strong Attention to Detail, Analytical Thinking, Problem Solving\n\n\n\nbusiness direction, operation.\n\n\n\n\n2021-2025 Brigham Young University, Idaho\n\nStatistics Major with a Data Science Minor\n\n\n\n\nSep 2024 - Present Data Visualization Specialist 2 , BYUI, Idaho - Initiated new visualized statistics, leading to catching discrepancies between sources using Power BI and Presenting indicators on a weekly basis - Generated time series charts and KPI dashboards to monitor annual performance, collaborating with executive leadership to enhance workflow strategies through the utilization of DAX and Query\nApril 2024 - Sep 2024 Business Analyst Intern , The Church of Jesus Christ of Latter Day Saints, Utah\n\nProcessed 4 million rows of data and organized a comprehensive data dictionary\nCollaborated with various departments and facilitate a strong connection\nDesigned a Power BI dashboard to detect utility bill anomalies and reported to stakeholders\nContributed to analytical projects, data validation, and assisted in data interpretation tasks"
-  },
-  {
-    "objectID": "resume.html#currently",
-    "href": "resume.html#currently",
-    "title": "Erin Hu’s Resume",
-    "section": "",
-    "text": "Senior student at BYU - Idaho\n\n\nHard Skill: Data Analysis(R studio, SQL, Power BI), Data Visualization(Tableau), Microsoft Excel\nSoft Skills: Cross-functional Team Collaboration, Strong Attention to Detail, Analytical Thinking, Problem Solving\n\n\n\nbusiness direction, operation."
-  },
-  {
-    "objectID": "resume.html#education",
-    "href": "resume.html#education",
-    "title": "Erin Hu’s Resume",
-    "section": "",
-    "text": "2021-2025 Brigham Young University, Idaho\n\nStatistics Major with a Data Science Minor"
-  },
-  {
-    "objectID": "resume.html#occupation",
-    "href": "resume.html#occupation",
-    "title": "Erin Hu’s Resume",
-    "section": "",
-    "text": "Sep 2024 - Present Data Visualization Specialist 2 , BYUI, Idaho - Initiated new visualized statistics, leading to catching discrepancies between sources using Power BI and Presenting indicators on a weekly basis - Generated time series charts and KPI dashboards to monitor annual performance, collaborating with executive leadership to enhance workflow strategies through the utilization of DAX and Query\nApril 2024 - Sep 2024 Business Analyst Intern , The Church of Jesus Christ of Latter Day Saints, Utah\n\nProcessed 4 million rows of data and organized a comprehensive data dictionary\nCollaborated with various departments and facilitate a strong connection\nDesigned a Power BI dashboard to detect utility bill anomalies and reported to stakeholders\nContributed to analytical projects, data validation, and assisted in data interpretation tasks"
-  },
-  {
-    "objectID": "Story_Telling/project3.html",
-    "href": "Story_Telling/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 3"
-    ]
-  },
-  {
-    "objectID": "Story_Telling/project1.html",
-    "href": "Story_Telling/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Story_Telling/project4.html",
-    "href": "Story_Telling/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Story_Telling/project5.html",
-    "href": "Story_Telling/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Story_Telling/project2.html",
-    "href": "Story_Telling/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "exploration.html",
-    "href": "exploration.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Linear Regression"
-    ]
-  },
-  {
-    "objectID": "exploration.html#title-2-header",
-    "href": "exploration.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Linear Regression"
-    ]
-  },
-  {
-    "objectID": "cleansing.html",
-    "href": "cleansing.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Cleansing"
-    ]
-  },
-  {
-    "objectID": "cleansing.html#title-2-header",
-    "href": "cleansing.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Cleansing"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project5.html",
-    "href": "Machine_Learning/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Machine Learning",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project2.html",
-    "href": "Machine_Learning/project2.html",
-    "title": "The War with Star Wars",
-    "section": "",
-    "text": "Elevator pitch\nAs we cleaned the data to make it ready for a machine learning model, we changed all the answers into numbers. After putting the data into the model, we got a 52% accuracy rate when predicting if someone who has watched Star Wars makes more than $50,000 a year.\n\n\nShow the code\n# %%\nurl = 'https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv'\n\ndf_cols = pd.read_csv(url, encoding = \"ISO-8859-1\", nrows = 1).melt()\ndf = pd.read_csv(url, encoding = \"ISO-8859-1\", skiprows =2, header = None )\n\n\n\n\nShorten and Clean Data |Question 1\nShorten the column names and clean them up for easier use with pandas. Provide a table or list that exemplifies how you fixed the names.\n\n\nShow the code\nvariables_replace = {\n    'Which of the following Star Wars films have you seen\\\\? Please select all that apply\\\\.':'Seen',\n    'Please rank the Star Wars films in order of preference with 1 being your favorite film in the franchise and 6 being your least favorite film.':'Rank',\n    'Please state whether you view the following characters favorably, unfavorably, or are unfamiliar with him/her.':'view',\n    'Do you consider yourself to be a fan of the Star Trek franchise\\\\?':'is_fan_star_trek',\n    'Do you consider yourself to be a fan of the Expanded Universe\\\\?\\x8cæ':'is_fan_universe',\n    'Are you familiar with the Expanded Universe\\\\?':'know_universe',\n    'Have you seen any of the 6 films in the Star Wars franchise\\\\?':'seen_any',\n    'Do you consider yourself to be a fan of the Star Wars film franchise\\\\?':'star_wars_fans',\n    'Which character shot first\\\\?':'shot_first',\n    'Unnamed: \\d{1,2}':np.nan,\n    ' ':'_',\n}\n\nvalues_replace = {\n    'Response':'',\n    'Star Wars: Episode ':'',\n    ' ':'_'\n}\n\n\ndf_cols_use = (df_cols\n    .assign(\n        value_replace = lambda x:  x.value.str.strip().replace(values_replace, regex=True),\n        variable_replace = lambda x: x.variable.str.strip().replace(variables_replace, regex=True)\n    )\n    .fillna(method = 'ffill')\n    .fillna(value = \"\")\n    .assign(column_names = lambda x: x.variable_replace.str.cat(x.value_replace, sep = \"__\").str.strip('__').str.lower())\n    )\n\ndf.columns = df_cols_use.column_names.to_list()\ndf_cols_use.head(5)\n\n\n\n\n\n\n\n\n\nvariable\nvalue\nvalue_replace\nvariable_replace\ncolumn_names\n\n\n\n\n0\nRespondentID\n\n\nRespondentID\nrespondentid\n\n\n1\nHave you seen any of the 6 films in the Star W...\nResponse\n\nseen_any\nseen_any\n\n\n2\nDo you consider yourself to be a fan of the St...\nResponse\n\nstar_wars_fans\nstar_wars_fans\n\n\n3\nWhich of the following Star Wars films have yo...\nStar Wars: Episode I The Phantom Menace\nI__The_Phantom_Menace\nSeen\nseen__i__the_phantom_menace\n\n\n4\nUnnamed: 4\nStar Wars: Episode II Attack of the Clones\nII__Attack_of_the_Clones\nSeen\nseen__ii__attack_of_the_clones\n\n\n\n\n\n\n\nwe have combined the data’s two column titles into more precies columns and made it easier for our computer to read, as we are preping to use it in graphs and a ML model.\n\n\nClean and Format |Question 2\nClean and format the data so that it can be used in a machine learning model. As you format the data, you should complete each item listed below. In your final report provide example(s) of the reformatted data with a short description of the changes made.\n\n\n|Part A\nFilter the dataset to respondents that have seen at least one film\n\n\nShow the code\nseen_columns = [\n    'seen__i__the_phantom_menace', \n    'seen__ii__attack_of_the_clones', \n    'seen__iii__revenge_of_the_sith', \n    'seen__iv__a_new_hope', \n    'seen__v_the_empire_strikes_back', \n    'seen__vi_return_of_the_jedi'\n]\n# Filter out respondents who have seen any Star Wars movie but haven't specified any\nhave_seen_df = df[df[seen_columns].notna().any(axis=1)]\n\n\nlooking at if respondents put down the name of a Star Wars movie, and then filtered to people who put down at least on title. this is the data frame that we will be filtering.\n\n\n|Part B\nCreate a new column that converts the age ranges to a single number. Drop the age range categorical column\n\n\nShow the code\n# Convert age ranges to a single number and drop the original column\nhave_seen_df['age_num'] = (have_seen_df['age']\n        .str.replace(\"&gt;\", \"\")\n        .str.replace('18-29', '1')\n        .str.replace('30-44', '2')\n        .str.replace('45-60', '3')\n        .str.replace('60', '4')\n        .astype('float'))\nhave_seen_df = have_seen_df.drop(columns=['age'])\n\n\nfiliting the age column from a string, into a number so it is computable.\n\n\n|Part C\nCreate a new column that converts the education groupings to a single number. Drop the school categorical column\n\n\nShow the code\n#clean up and convert education\nhave_seen_df['education_num'] = (have_seen_df['education']\n        .replace(np.nan, '0')\n        .str.replace('Less than high school degree', '8')\n        .str.replace('High school degree', '12')\n        .str.replace('Some college or Associate degree', '14')\n        .str.replace('Bachelor degree', '16')\n        .str.replace('Graduate degree', '20')\n        .astype('float'))\nhave_seen_df = have_seen_df.drop(columns=['education'])\n\n\nfiltering down esucation to numbers that corispond to number of years of schooling that were aquired by respondents. (ex. 8 = middle school, 12 = highschool, some college = 12…).\n\n\n|Part D\nCreate a new column that converts the income ranges to a single number. Drop the income range categorical column\n\n\nShow the code\n# %%\n#clean up and remove symbols\nnew_income = (have_seen_df['household_income']\n        .str.split(\"-\", expand=True)\n        .rename(columns={0: 'income_min', 1: 'income_max'})\n        .apply(lambda x: x.str.replace(\"$\", \"\"))\n        .apply(lambda x: x.str.replace(\",\", \"\"))\n        .apply(lambda x: x.str.replace(\"+\", \"\"))\n        .astype('float'))\n\n# Join the new income columns back to the DataFrame\nhave_seen_df = pd.concat([have_seen_df, new_income['income_min']], axis=1)\nhave_seen_df = have_seen_df.drop(columns=['household_income'])\n\n\nmaking income into one column by puting the minimum range number as the only number present in the column.\n\n\n|Part E\nCreate your target (also known as “y” or “label”) column based on the new income range column\n\n\nShow the code\nhave_seen_df['income_target'] = have_seen_df['income_min'].apply(lambda x: 1 if x &lt; 50000 else 0)\n\n\ncreating a target column for the ML model with over $50,000 in the income_min column = 1 in the target column, otherwise its a 0.\n\n\nShow the code\n# Assuming df is already defined\npd.set_option('future.no_silent_downcasting', True)\n\ncolumns_to_transform = ['view__han_solo', 'view__luke_skywalker', 'view__princess_leia_organa', 'view__anakin_skywalker', 'view__obi_wan_kenobi', 'view__emperor_palpatine', 'view__darth_vader', 'view__lando_calrissian', 'view__boba_fett', 'view__c-3p0', 'view__r2_d2', 'view__jar_jar_binks', 'view__padme_amidala', 'view__yoda']\n\nfor col in columns_to_transform:\n    have_seen_df[col] = (have_seen_df[col]\n               .replace('Very favorably', 2)\n               .replace('Somewhat favorably', 1)\n               .replace([np.nan, 'Unfamiliar (N/A)', 'Neither favorably nor unfavorably (neutral)'], 0)\n               .replace('Somewhat unfavorably', -1)\n               .replace('Very unfavorably', -2)\n               .astype(int))\n\n\n\n\n|Part F\nOne-hot encode all remaining categorical columns\n\n\nShow the code\n# %%\n# One-hot encoding\ncategorical_columns = ['seen__i__the_phantom_menace', 'seen__ii__attack_of_the_clones', 'seen__iii__revenge_of_the_sith', 'seen__iv__a_new_hope', 'seen__v_the_empire_strikes_back', 'seen__vi_return_of_the_jedi']\n\nhave_seen_df[categorical_columns] = have_seen_df[categorical_columns].notna().astype(int)\n\n# Perform one-hot encoding on 'location_(census_region)' and 'shot_first'\none_hot_df = pd.get_dummies(have_seen_df[['location_(census_region)', 'shot_first']], drop_first=True)\n\n# Concatenate one-hot encoded columns with the original DataFrame\nhave_seen_df = pd.concat([have_seen_df, one_hot_df], axis=1)\n\n# Drop the original categorical columns used for one-hot encoding\nhave_seen_df = have_seen_df.drop(columns=['location_(census_region)', 'shot_first'])\n\n\nHot code the shot_first data, and location data to turn it into nubmers and computable. as well as turnign the seen columns into 1’s if a title and no answers into 0’s.\n\n\nShow the code\n# Combine all transformed columns into the final DataFrame\nfinal_df = have_seen_df.copy()\n\n# Ensure binary representation for all boolean columns\nfinal_df = final_df.replace([True, 'Yes', 'Male'], 1).replace([False, 'No', np.nan, 'Female'], 0)\nfinal_df\n\n\n\n\n\n\n\n\n\nrespondentid\nseen_any\nstar_wars_fans\nseen__i__the_phantom_menace\nseen__ii__attack_of_the_clones\nseen__iii__revenge_of_the_sith\nseen__iv__a_new_hope\nseen__v_the_empire_strikes_back\nseen__vi_return_of_the_jedi\nrank__i__the_phantom_menace\n...\nlocation_(census_region)_East South Central\nlocation_(census_region)_Middle Atlantic\nlocation_(census_region)_Mountain\nlocation_(census_region)_New England\nlocation_(census_region)_Pacific\nlocation_(census_region)_South Atlantic\nlocation_(census_region)_West North Central\nlocation_(census_region)_West South Central\nshot_first_Han\nshot_first_I don't understand this question\n\n\n\n\n0\n3292879998\n1\n1\n1\n1\n1\n1\n1\n1\n3.0\n...\n0\n0\n0\n0\n0\n1\n0\n0\n0\n1\n\n\n2\n3292765271\n1\n0\n1\n1\n1\n0\n0\n0\n1.0\n...\n0\n0\n0\n0\n0\n0\n1\n0\n0\n1\n\n\n3\n3292763116\n1\n1\n1\n1\n1\n1\n1\n1\n5.0\n...\n0\n0\n0\n0\n0\n0\n1\n0\n0\n1\n\n\n4\n3292731220\n1\n1\n1\n1\n1\n1\n1\n1\n5.0\n...\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n\n\n5\n3292719380\n1\n1\n1\n1\n1\n1\n1\n1\n1.0\n...\n0\n1\n0\n0\n0\n0\n0\n0\n1\n0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1180\n3288389603\n1\n1\n1\n1\n1\n1\n1\n1\n3.0\n...\n0\n0\n0\n0\n1\n0\n0\n0\n1\n0\n\n\n1181\n3288388730\n1\n1\n1\n1\n1\n1\n1\n1\n5.0\n...\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n\n\n1182\n3288378779\n1\n1\n1\n1\n1\n1\n1\n1\n4.0\n...\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n\n\n1184\n3288373068\n1\n1\n1\n1\n1\n1\n1\n1\n4.0\n...\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n\n\n1185\n3288372923\n1\n0\n1\n1\n0\n0\n1\n1\n6.0\n...\n0\n0\n0\n0\n1\n0\n0\n0\n0\n1\n\n\n\n\n835 rows × 47 columns\n\n\n\nThis is the final filtered data frame. This has 835 respondents and we are using this to make graphs and the ML model.\n\n\nValidate |Question 3\nValidate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.\n\n\nShow the code\n# Calculate percentages\nhan_count = final_df['shot_first_Han'].sum()\ngreedo_count = ((final_df['shot_first_Han'] == 0) & (final_df[\"shot_first_I don't understand this question\"] == 0)).sum()\ndont_understand_count = final_df[\"shot_first_I don't understand this question\"].sum()\n\ntotal_responses = len(final_df)\n\nhan_percent = (han_count / total_responses) * 100\ngreedo_percent = (greedo_count / total_responses) * 100\ndont_understand_percent = (dont_understand_count / total_responses) * 100\ngreedo_percent_rounded = math.floor(greedo_percent)\n\n\n# Create a DataFrame with the percentages\nshot_data = pd.DataFrame({\n    'Who_Shot_First': [\"I don't understand this question\", 'Greedo', 'Han'],\n    'Percent': [dont_understand_percent, greedo_percent_rounded, han_percent]\n})\n\n# Create the bar chart using Plotly\nshot_chart = px.bar(\n    shot_data,\n    x='Percent',\n    y='Who_Shot_First',\n    orientation='h',  # horizontal bars\n    title=\"Who Shot First?\",  # Title of the chart\n)\n\n# Update layout with annotations and subtitle\n\n# Update layout with annotations and subtitle\nshot_chart.update_layout(\n    annotations=[\n        {\n            'x': percent,\n            'y': category,\n            'text': f'{percent:.0f}%',  # Display percentage with two decimal places\n            'showarrow': False,\n            'font': {'color': 'black', 'size': 12},\n            'xanchor': 'left' if percent &lt; 50 else 'right'  # Align text based on bar position\n        }\n        for percent, category in zip(shot_data['Percent'], shot_data['Who_Shot_First'])\n    ],\n)\n# Add subtitle directly using add_annotation()\nshot_chart.add_annotation(\n    text='According to 834 respondents',  # Subtitle text\n    x=-0,  # Subtitle position (middle of the chart)\n    y=1.15,  # Subtitle position (above the chart)\n    xref='paper',  # Subtitle alignment (relative to the entire chart width)\n    yref='paper',  # Subtitle alignment (relative to the entire chart height)\n    showarrow=False,  # No arrow for the annotation\n    font=dict(size=12, color='black'),  # Font settings for the subtitle text\n)\n\n# Show the chart\nshot_chart.show()\n\n\n                                                \n\n\nThis is the replica of the How Shot First graph from the artical.\n\n\nShow the code\n# Calculate percentages\nPhantom = final_df['seen__i__the_phantom_menace'].sum()\nclones = final_df['seen__ii__attack_of_the_clones'].sum()\nRevenge = final_df['seen__iii__revenge_of_the_sith'].sum()\nHope = final_df['seen__iv__a_new_hope'].sum()\nEmpire = final_df['seen__v_the_empire_strikes_back'].sum()\nReturn = final_df['seen__vi_return_of_the_jedi'].sum()\n\ntotal_responses = len(final_df)\n\nPhantom_percent = (Phantom / total_responses) * 100\nclones_percent = (clones / total_responses) * 100\nRevenge_percent = (Revenge / total_responses) * 100\nHope_percent = (Hope / total_responses) * 100\nEmpire_percent  = (Empire  / total_responses) * 100\nReturn_percent = (Return / total_responses) * 100\n\nPhantom_percent = math.floor(Phantom_percent)\n\n\n# Create a DataFrame with the percentages\nshot_data = pd.DataFrame({\n    'movies': [\"Return of the Jedi\", ' The empire Strikes Back', ' A New Hope', 'Revenge fo the Sith', 'Attack of the Clones', 'The Phantom Menace'],\n    'Percent': [Return_percent, Empire_percent, Hope_percent,Revenge_percent, clones_percent, Phantom_percent]\n})\n\n# Create the bar chart using Plotly\nshot_chart = px.bar(\n    shot_data,\n    x='Percent',\n    y='movies',\n    orientation='h',  # horizontal bars\n    title=\"Which 'Star Wars' Movies Have You Seen?\",  # Title of the chart\n)\nshot_chart.update_layout(\n    annotations=[\n        {\n            'x': percent,\n            'y': category,\n            'text': f'{percent:.0f}%',  # Display percentage with two decimal places\n            'showarrow': False,\n            'font': {'color': 'black', 'size': 12},\n            'xanchor': 'left' if percent &gt; 50 else 'right'  # Align text based on bar position\n        }\n        for percent, category in zip(shot_data['Percent'], shot_data['movies'])\n    ],\n)\n# Add subtitle directly using add_annotation()\nshot_chart.add_annotation(\n    text='According to 834 respondents',  # Subtitle text\n    x=-0,  # Subtitle position (middle of the chart)\n    y=1.15,  # Subtitle position (above the chart)\n    xref='paper',  # Subtitle alignment (relative to the entire chart width)\n    yref='paper',  # Subtitle alignment (relative to the entire chart height)\n    showarrow=False,  # No arrow for the annotation\n    font=dict(size=12, color='black'),  # Font settings for the subtitle text\n)\n\nshot_chart\n\n\n                                                \n\n\nThis is the replica of which movie the respondents have seen from the artical.\n\n\nMachine Learning Model|Question 4\nBuild a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.\n\n\nShow the code\ncolumns_to_keep = ['age_num', 'gender', 'education_num', 'star_wars_fans', 'seen__iv__a_new_hope', 'seen__vi_return_of_the_jedi', 'seen__v_the_empire_strikes_back', 'location_(census_region)_West North Central','shot_first_Han','location_(census_region)_Middle Atlantic']\n\nX_pred = final_df[columns_to_keep]\ny_pred = final_df['income_target']\nX_train, X_test, y_train, y_test = train_test_split(\n    X_pred, y_pred, test_size = .30, random_state = 100)  \n\n\nclf = tree.DecisionTreeClassifier()\nclf = clf.fit(X_train, y_train)\ny_pred = clf.predict(X_test)\n\n\n\n\nShow the code\ndf_features = pd.DataFrame(\n    {'f_names': X_train.columns, \n    'f_values': clf.feature_importances_}).sort_values('f_values', ascending = False)\n\nchart = px.bar(df_features.head(15),\n    x='f_values', \n    y='f_names'\n)\n\nchart.update_layout(yaxis={'categoryorder':'total ascending'})\n\n\n                                                \n\n\nThis shows the corilation of more then $50,000 for each one of these columns.\n\n\nShow the code\nprint(metrics.classification_report(y_pred, y_test))\n\n\n              precision    recall  f1-score   support\n\n           0       0.83      0.75      0.79       206\n           1       0.20      0.29      0.24        45\n\n    accuracy                           0.67       251\n   macro avg       0.51      0.52      0.51       251\nweighted avg       0.72      0.67      0.69       251\n\n\n\n\n\nShow the code\nmetrics.RocCurveDisplay.from_estimator(clf, X_test, y_test)\n\n\n\n\n\n\n\n\n\nThis graph shows that we have over 50% acuricy with our model.\n\n\nShow the code\ndf_features = pd.DataFrame(\n    {'f_names': X_train.columns, \n    'f_values': clf.feature_importances_}).sort_values('f_values', ascending = False)\n\n\n\n\nShow the code\ndf_features\n\n\n\n\n\n\n\n\n\nf_names\nf_values\n\n\n\n\n2\neducation_num\n0.192756\n\n\n0\nage_num\n0.136190\n\n\n8\nshot_first_Han\n0.122390\n\n\n1\ngender\n0.116058\n\n\n3\nstar_wars_fans\n0.085191\n\n\n7\nlocation_(census_region)_West North Central\n0.082907\n\n\n9\nlocation_(census_region)_Middle Atlantic\n0.069893\n\n\n5\nseen__vi_return_of_the_jedi\n0.069377\n\n\n4\nseen__iv__a_new_hope\n0.066287\n\n\n6\nseen__v_the_empire_strikes_back\n0.058952\n\n\n\n\n\n\n\n\n\nShow the code\nconfusion = metrics.confusion_matrix(y_test, y_pred)\nconfusion\n\n\narray([[154,  32],\n       [ 52,  13]])\n\n\n\n\nShow the code\ntp = confusion[0,0]\nfp = confusion[1,0]\nfn = confusion[0,1]\ntn = confusion[1,1]\n\n\n\n\nShow the code\nprecision = (tp / (tp+fp))\naccuracy = ((tp+tn) / (tp+fn+fp+tn))\nnegative_prediction = (tn / (tn+fn))\nmetrics = {\n    'Metric': ['Precision', 'Accuracy', 'Negative Prediction'],\n    'Value': [precision, accuracy, negative_prediction]}\n\ndf = pd.DataFrame(metrics)\ndf\n\n\n\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\n0\nPrecision\n0.747573\n\n\n1\nAccuracy\n0.665339\n\n\n2\nNegative Prediction\n0.288889\n\n\n\n\n\n\n\nThis table shows our precision accuracy and negative rediction and how acurite they are out of 1. precision is a 75%, accuracy is 67% and our neagtive rediction is 30% acurrate.\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Machine Learning",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "ml.html",
-    "href": "ml.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Machine Learning"
-    ]
-  },
-  {
-    "objectID": "ml.html#title-2-header",
-    "href": "ml.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Machine Learning"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Exploration/project4.html",
-    "href": "Cleansing_Exploration/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Cleansing_Exploration/project1.html",
-    "href": "Cleansing_Exploration/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Cleansing_Exploration/project3.html",
-    "href": "Cleansing_Exploration/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Competition/project5.html",
-    "href": "Competition/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Competition",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Competition/project2.html",
-    "href": "Competition/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Competition",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Full_Stack/project4.html",
-    "href": "Full_Stack/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Full_Stack/project1.html",
-    "href": "Full_Stack/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Full_Stack/project3.html",
-    "href": "Full_Stack/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 3"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project5.html",
-    "href": "Cleansing_Projects/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project2.html",
-    "href": "Cleansing_Projects/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "full_stack.html",
-    "href": "full_stack.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "full_stack.html#title-2-header",
-    "href": "full_stack.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "index.html#title-2-linear-regression",
-    "href": "index.html#title-2-linear-regression",
-    "title": "Erin",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "Linear_Regression/project3.html",
-    "href": "Linear_Regression/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Exploration",
-      "Project 3"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project1.html",
-    "href": "Linear_Regression/project1.html",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "",
-    "text": "Show the code\nlibrary(readxl)\nlibrary(car)\nlibrary(tidyverse)\nlibrary(DT)\nlibrary(pander)\nlibrary(ggplot2)\ncarprice &lt;- read_excel(\"~/Desktop/carprice.xlsx\")\n\n\nHere is my report for my old car (BMWX3), which I bought last year and sold it this summer. The price I bought was 9k, and the mileage at that time was 155000 miles, and the price I sold is 6.5k, and the mileage was 161250 miles.",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project4.html",
-    "href": "Linear_Regression/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Exploration",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project5.html",
-    "href": "Linear_Regression/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Exploration",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html",
-    "href": "Linear_Regression/project2.html",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "",
-    "text": "Show the code\nlibrary(readr)\nlibrary(car)\nlibrary(tidyverse)\nlibrary(mosaic)\n# library(reshape2)\nlibrary(readr)\nlibrary(plotly)\nlibrary(stringi)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(pander)\nFeatures_data_set &lt;- read_csv(\"~/Desktop/Featuresdataset.csv\",\n                              col_types = cols(Date = col_date(format = \"%d/%m/%Y\")))\n# View(Features_data_set)\n\nsales_data_set &lt;- read_csv(\"~/Desktop/salesdataset.csv\",\ncol_types = cols(Date = col_date(format = \"%d/%m/%Y\")))\n#View(sales_data_set)\n\nstores_data_set &lt;- read_csv(\"~/Desktop/storesdataset.csv\", show_col_types = FALSE)\n#View(stores_data_set)",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "index.html#title-3-change",
-    "href": "index.html#title-3-change",
-    "title": "Erin",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "Linear_Regression/project1.html#graphical-summaries",
-    "href": "Linear_Regression/project1.html#graphical-summaries",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "Graphical Summaries",
-    "text": "Graphical Summaries\nThis graph is based on the marketing price of the BMW X3. The pink dot on the graph represents the price at which I purchased my car, while the red dot represents the price at which I sold it. The price difference between these two points is $2,500 (excluding factors like gas or additional expenses). This essentially reflects the depreciation in value my car experienced per mile driven. During my ownership of the car, I drove a total of 6,250 miles. By simple calculation, this translates to a cost of $0.4 per mile. However, when we use the equation derived from the trend line, the suggested selling price for my car is in between $3135 and $1063. And the best price to see my car is $5775.5.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_point(x = 155000, y = 9000, size = 3, color = \"hotpink\") + \n  geom_text(x = 155000, y = 11000 , label = \"The price when I bought my car\", color = \"navy\", size = 3) +\n  geom_point(x = 161250, y = 6500, size = 3, color = \"firebrick\") + \n  geom_text(x = 161250, y = 4000 , label = \"The price when I sold my car\", color = \"navy\", size = 3) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n  stat_function(fun=function(x) exp(10.92 - 0.00001401*x), add=TRUE, col=\"firebrick\") +\n  geom_segment(x=161250, xend=161250, y=3135.847, yend=10637.18, \n               color=\"skyblue\", alpha=0.01, lwd=3) +\n\n    theme_minimal()",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project1.html#section",
-    "href": "Linear_Regression/project1.html#section",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "5776 3136 10637",
-    "text": "5776 3136 10637\n::: :::\nAfter I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project1.html#analysis",
-    "href": "Linear_Regression/project1.html#analysis",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "Analysis",
-    "text": "Analysis\nThis the graph of all the data that I collect. The blue line is the regression line of the trend, but of course, the price in the real world is not gonna be a stright line.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_smooth(method =\"lm\", formula = y~x, se=FALSE) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n\n    theme_minimal()\n\n\n\n\n\n\n\n\n\nSo I tried to find what is my λ by using boxCox function.\n\n\nShow the code\ncarprice.lm &lt;- lm(Price ~ Mileage, data=carprice)\nboxCox(carprice.lm)\n\n\n\n\n\n\n\n\n\nThis graph helps me to decide what is my λ, 0 seems like to be my best fit, so I will choose my λ to be 0. Also in this way, I will know that I have to use the log function as the way to transform my data. That’s the best since log carry the interpretation with it.\n\n\nShow the code\ncarprice.lm.t &lt;- lm(log(Price) ~ Mileage, data=carprice)\nsummary(carprice.lm.t) |&gt; \n  pander()\n\n\n\n\n\n\n\n\n\n\n\n\n \nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\n(Intercept)\n10.92\n0.09799\n111.4\n3.2e-28\n\n\nMileage\n-1.401e-05\n1.069e-06\n-13.11\n5.731e-11\n\n\n\n\nFitting linear model: log(Price) ~ Mileage\n\n\n\n\n\n\n\n\nObservations\nResidual Std. Error\nR^2\nAdjusted R^2\n\n\n\n\n21\n0.2699\n0.9005\n0.8952\n\n\n\n\n\nThis is the regression line after I transform my data. And from the table, I will know 10.92 is my intercept, and -0.00001401 is my slope.\n\n\\underset{\\text{Log Car Price}}{\\log(Y'_i)} = 10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}\n\nAnd if I want to put this into the real world, this means I suppose to sell my car at the price of 7.5k.\nAfter the transformation, this equation can help me to find the best price that I should sell my car.\n\n\\underset{\\text{Car Price}}{\\hat{Y}_i} = e^{10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}}\n\n\n\nShow the code\nmypred&lt;- predict(carprice.lm.t, data.frame(Mileage=161250), interval=\"prediction\")\npander(exp(mypred))\n\n\n\n\n\n\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n5776\n3136\n10637\n\n\n\n\n\nAfter I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project1.html#hypothesis",
-    "href": "Linear_Regression/project1.html#hypothesis",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "Hypothesis",
-    "text": "Hypothesis\n\n\\underset{\\text{Log Car Price}}{\\log(Y_i)} = \\overbrace{\\beta_0}^{\\text{Y-int}} + \\overbrace{\\beta_1}^{\\text{Slope}} \\underset{\\text{Mileage}}{X_i} + \\epsilon_i \\quad \\text{Where } \\epsilon_i \\sim N(0, \\sigma^2)\n\nHypothesis Test:\n\nH_0: \\beta_1 = 0 \\\\\nH_a: \\beta_1 \\neq 0",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#backgroung",
-    "href": "Linear_Regression/project2.html#backgroung",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Backgroung",
-    "text": "Backgroung\nI got the data from Kaggle about the Walmart stores located in different regions. Each store contains a number of departments, and my tasks is to predict the department-wide sales for each store.\nIn addition, Walmart runs several promotional markdown events throughout the year. These markdowns precede prominent holidays, the four largest of which are the Super Bowl, Labor Day, Thanksgiving, and Christmas. The weeks including these holidays are weighted five times higher in the evaluation than non-holiday weeks. Part of the challenge presented is modeling the effects of markdowns on these holiday weeks in the absence of complete/ideal historical data.",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#result",
-    "href": "Linear_Regression/project2.html#result",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Result",
-    "text": "Result\nThis is the summary of my linear model of Walmart Weekly sales, and the validation adjust R square is 0.395, which means my model is 39.5% close to the market price trend.\nThe math model I found to predict Walmart weekly sales is:\n\nY_i = \\beta_0 + \\beta_1 X_{MarkDown1} + \\beta_2 X_{MarkDown2} + \\beta_3 X_{MarkDown3} + \\beta_4 X_{MarkDown5} \\\\\n+ \\beta_5 X_{CPIgroup2} + \\beta_6 X_{CPIgroup3} + \\beta_7 X_{CPIgroup4} \\\\\n+ \\beta_8 X_{Unemployment} \\\\\n+ \\beta_9 X_{Deptgroup2} + \\beta_{10} X_{Deptgroup3} + \\beta_{11} X_{Deptgroup4} + \\beta_{12} X_{Deptgroup5}\n\nThe estimate model I found to predict Walmart weekly sales is:\n\n\\hat{Y} = -1392.556 + 0.1383814 X_{MarkDown1} + 0.05732099 X_{MarkDown2} + 0.1606509 X_{MarkDown3} \\\\\n+ 0.1821851 X_{MarkDown5} + 6887.389 X_{CPIgroup2} + 6527.225 X_{CPIgroup3} \\\\\n+ 5101.357 X_{CPIgroup4} - 454.8256 X_{Unemployment} \\\\\n+ 4919.982 X_{Deptgroup2} + 11580.88 X_{Deptgroup3} \\\\\n+ 16454.77 X_{Deptgroup4} + 37098.27 X_{Deptgroup5}",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#orginal-model",
-    "href": "Linear_Regression/project2.html#orginal-model",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Orginal Model",
-    "text": "Orginal Model\nThe model I use for this analysis is the estimated line model:\n\n\\underset{\\text{estimated mean weekly sales}}{\\hat{Y}_i} = b_0 + b_1 X_i \\quad \\underset{\\text{estimated regression equation}}{}",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#analysis",
-    "href": "Linear_Regression/project2.html#analysis",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Analysis",
-    "text": "Analysis\nFor those curious about my model’s development process, here’s an overview:\nGiven the extensive dataset I obtained, consisting of 423,325 data entries spread across 99 departments, I sought to optimize my model’s alignment with market trends. To accomplish this, I segmented the departments into five groups based on their weekly sales and organized them into four CPI groups using the summarized values.\n\n\nShow the code\nsales_feature &lt;- sales_data_set  |&gt; \n  full_join(Features_data_set, by = c(\"Date\", \"Store\"))\n#View(sales_feature)\n\nsales_features_no_na &lt;- sales_feature %&gt;% replace(is.na(sales_feature), 0)\n\nsales_features_no_na &lt;- sales_features_no_na |&gt; \n  group_by(Dept) |&gt; \n    mutate(median= median(Weekly_Sales), \n           dept_group=case_when(median &lt; 3622~\"group1\",\n                                median &lt; 9253~\"group2\",\n                                median &lt; 14147~\"group3\",\n                                median &lt; 18249~\"group4\",\n                                median &lt; 61817~\"group5\")) \n\n#View(sales_features_no_na)\n\n\n\nsales_features_no_na &lt;- sales_features_no_na |&gt; \n  group_by(CPI) |&gt; \n    mutate(median= median(CPI), \n           CPI_group=case_when(CPI &lt; 10~\"1\",\n                                CPI &lt; 150~\"2\",\n                                CPI &lt; 210~\"3\",\n                                TRUE~\"4\"\n                                )) \n\n\n#View(sales_features_no_na)\n\nsales_features_no_na &lt;- sales_features_no_na |&gt; \n  mutate(IsHoliday.x = ifelse(IsHoliday.x %in% c(\"TRUE\"),1,0)) \n\n\n\n\nShow the code\nmylm8 &lt;- lm(Weekly_Sales ~ \n              #I(Temperature^2) + \n              MarkDown1 + \n              MarkDown2 + \n              MarkDown3 + \n              MarkDown5 + \n              CPI_group + \n              Unemployment + \n              dept_group, \n            data = sales_features_no_na)\nsummary(mylm8)\n\n\n\nCall:\nlm(formula = Weekly_Sales ~ MarkDown1 + MarkDown2 + MarkDown3 + \n    MarkDown5 + CPI_group + Unemployment + dept_group, data = sales_features_no_na)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-142863   -5566   -1137    2963  654601 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)      -1.393e+03  7.240e+02  -1.924   0.0544 .  \nMarkDown1         1.384e-01  4.887e-03  28.315  &lt; 2e-16 ***\nMarkDown2         5.732e-02  5.373e-03  10.669  &lt; 2e-16 ***\nMarkDown3         1.607e-01  4.829e-03  33.266  &lt; 2e-16 ***\nMarkDown5         1.822e-01  6.769e-03  26.915  &lt; 2e-16 ***\nCPI_group2        6.887e+03  7.370e+02   9.345  &lt; 2e-16 ***\nCPI_group3        6.527e+03  7.377e+02   8.848  &lt; 2e-16 ***\nCPI_group4        5.101e+03  7.347e+02   6.944 3.82e-12 ***\nUnemployment     -4.548e+02  1.521e+01 -29.906  &lt; 2e-16 ***\ndept_groupgroup2  4.920e+03  7.547e+01  65.193  &lt; 2e-16 ***\ndept_groupgroup3  1.158e+04  8.942e+01 129.515  &lt; 2e-16 ***\ndept_groupgroup4  1.645e+04  1.061e+02 155.090  &lt; 2e-16 ***\ndept_groupgroup5  3.710e+04  7.689e+01 482.483  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 17500 on 423312 degrees of freedom\nMultiple R-squared:  0.4051,    Adjusted R-squared:  0.4051 \nF-statistic: 2.402e+04 on 12 and 423312 DF,  p-value: &lt; 2.2e-16",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#validation",
-    "href": "Linear_Regression/project2.html#validation",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Validation",
-    "text": "Validation\n\n\nShow the code\nset.seed(121)\n\nnum_rows &lt;- 1000 #1460 total\nkeep &lt;- sample(1:nrow(sales_features_no_na), num_rows)\n\nmytrain &lt;- sales_features_no_na[keep, ] #Use this in the lm(..., data=mytrain) it is like \"rbdata\"\n\nmytest &lt;- sales_features_no_na[-keep, ]\n\nlm.all.train &lt;- lm(Weekly_Sales ~ \n              #I(Temperature^2) + \n              MarkDown1 + \n              MarkDown2 + \n              MarkDown3 + \n              MarkDown5 + \n              CPI_group + \n              Unemployment + \n              dept_group, \n            data = mytrain)\n\n\n\nyht &lt;- predict(lm.all.train, newdata=mytest)\n\n  # Compute y-bar\n  ybar &lt;- mean(mytest$Weekly_Sales) #Yi is given by Ynew from the new sample of data\n  \n  # Compute SSTO\n  SSTO &lt;- sum( (mytest$Weekly_Sales - ybar)^2 )\n  \n  # Compute SSE for each model using y - yhat\n  SSEt &lt;- sum( (mytest$Weekly_Sales - yht)^2 )\n\n  \n  # Compute R-squared for each\n  rst &lt;- 1 - SSEt/SSTO\n\n  \n  # Compute adjusted R-squared for each\n  n &lt;- length(mytest$Weekly_Sales) #sample size\n  pt &lt;- length(coef(lm.all.train)) #num. parameters in model\n\n  rsta &lt;- 1 - (n-1)/(n-pt)*SSEt/SSTO\n\n  \n\nmy_output_table2 &lt;- data.frame(Model = c(\"True\"), `Original R2` = c( summary(lm.all.train)$r.squared), `Orig. Adj. R-squared` = c( summary(lm.all.train)$adj.r.squared), `Validation R-squared` = c(rst), `Validation Adj. R^2` = c(rsta))\n\ncolnames(my_output_table2) &lt;- c(\"Model\", \"Original $R^2$\", \"Original Adj. $R^2$\", \"Validation $R^2$\", \"Validation Adj. $R^2$\")\n\nknitr::kable(my_output_table2, escape=TRUE, digits=4)\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nOriginal R^2\nOriginal Adj. R^2\nValidation R^2\nValidation Adj. R^2\n\n\n\n\nTrue\n0.4254\n0.4184\n0.395\n0.395\n\n\n\n\n\nAccording to the table provided, the adjusted R-square for my validation stands at 39.5%. While it falls short of my desired outcome, it’s important to note that achieving a high validation score is challenging given the substantial size and complexity of the dataset. However, this could be an area for further exploration and improvement in the future.",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#residual-plots-regression-assumptions",
-    "href": "Linear_Regression/project2.html#residual-plots-regression-assumptions",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Residual Plots & Regression Assumptions",
-    "text": "Residual Plots & Regression Assumptions\n\n\nShow the code\nplot(lm.all.train, which=1:2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nplot(lm.all.train$residuals, ylab=\"Residuals\")\n\n\n\n\n\n\n\n\n\nIn the next phase, I aim to check if my model meets certain assumptions. Looking at the first plot of residuals versus fitted values, I notice a “megaphone” pattern, which isn’t what I anticipated. This pattern suggests that the error varies inconsistently across different values of X. Also, when examining the QQ-plot, it seems that both the residuals and error terms don’t follow a normal distribution. Moreover, the plot of residuals against their order displays a noticeable pattern, indicating a possible lack of independence in the errors. These plots collectively raise doubts about the reliability of my model. I’m now considering whether applying a transformation could help address these concerns.",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#transformation",
-    "href": "Linear_Regression/project2.html#transformation",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Transformation",
-    "text": "Transformation\nOnce I made the decision to employ a transformation, I initially utilized the boxCox function to determine the appropriate value of λ. This process aimed to assist me in selecting the most suitable transformation for my data.\n\n\nShow the code\nlibrary(car)\nsales_features_no_na$Weekly_Sales2 &lt;- ifelse(sales_features_no_na$Weekly_Sales &lt;1, 1,sales_features_no_na$Weekly_Sales)\n\n\nboxCox(lm(Weekly_Sales2 ~ \n              #I(Temperature^2) + \n              MarkDown1 + \n              MarkDown2 + \n              MarkDown3 + \n              MarkDown5 + \n              CPI_group + \n              Unemployment + \n              dept_group, data=sales_features_no_na))\n\n\n\n\n\n\n\n\n\nBased on the depicted graph, it appears that my optimal () value is around 0.25. Consequently, I’ve identified that employing the transformation formula [Y’ = ] would be most suitable for my dataset.\n\n\nShow the code\nlmt &lt;- lm(sqrt(sqrt(Weekly_Sales2)) ~ \n              #I(Temperature^2) + \n              MarkDown1 + \n              MarkDown2 + \n              MarkDown3 + \n              MarkDown5 + \n              CPI_group + \n              Unemployment + \n              dept_group, data=sales_features_no_na)\nsummary(lmt)\n\n\n\nCall:\nlm(formula = sqrt(sqrt(Weekly_Sales2)) ~ MarkDown1 + MarkDown2 + \n    MarkDown3 + MarkDown5 + CPI_group + Unemployment + dept_group, \n    data = sales_features_no_na)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-29.9041  -1.2723   0.3212   1.6697  15.9256 \n\nCoefficients:\n                   Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)       7.204e-01  1.117e-01   6.451 1.11e-10 ***\nMarkDown1         3.067e-05  7.539e-07  40.680  &lt; 2e-16 ***\nMarkDown2         1.216e-05  8.288e-07  14.672  &lt; 2e-16 ***\nMarkDown3         2.060e-05  7.450e-07  27.653  &lt; 2e-16 ***\nMarkDown5         3.272e-05  1.044e-06  31.339  &lt; 2e-16 ***\nCPI_group2        5.665e+00  1.137e-01  49.829  &lt; 2e-16 ***\nCPI_group3        5.613e+00  1.138e-01  49.320  &lt; 2e-16 ***\nCPI_group4        5.238e+00  1.133e-01  46.220  &lt; 2e-16 ***\nUnemployment     -1.027e-01  2.346e-03 -43.793  &lt; 2e-16 ***\ndept_groupgroup2  2.771e+00  1.164e-02 237.990  &lt; 2e-16 ***\ndept_groupgroup3  4.293e+00  1.379e-02 311.268  &lt; 2e-16 ***\ndept_groupgroup4  5.240e+00  1.637e-02 320.152  &lt; 2e-16 ***\ndept_groupgroup5  7.468e+00  1.186e-02 629.598  &lt; 2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.699 on 423312 degrees of freedom\nMultiple R-squared:  0.5081,    Adjusted R-squared:  0.5081 \nF-statistic: 3.644e+04 on 12 and 423312 DF,  p-value: &lt; 2.2e-16\n\n\nHere’s my updated model post-transformation, indicating an improved adjusted R-square of 50%, which I find quite satisfying. However, I still need to verify whether the transformation has effectively addressed the issues observed in my diagnostic plots and also my validation r-square.\n\n\nShow the code\nplot(lmt, which=1:2)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nplot(lmt$residuals, ylab=\"Residuals\")\n\n\n\n\n\n\n\n\n\nUpon reviewing the diagnostic plots, it’s evident that the transformation did not resolve the issues; in fact, it appears to have exacerbated them. This prompts further concern. Additionally, I’m curious about the status of my validation R-square.\n\n\nShow the code\nnum_rows &lt;- round(423325*.70)\nkeep &lt;- sample(1:nrow(sales_features_no_na), num_rows)\n\nmytrain &lt;- sales_features_no_na[keep, ] #Use this in the lm(..., data=mytrain) it is like \"rbdata\"\n\nmytest &lt;- sales_features_no_na[-keep, ]\n\nlm.all.train &lt;- lm(sqrt(sqrt(Weekly_Sales2))~ \n              #I(Temperature^2) + \n              MarkDown1 + \n              MarkDown2 + \n              MarkDown3 + \n              MarkDown5 + \n              CPI_group + \n              Unemployment + \n              dept_group, \n            data = mytrain)\n\n\n\nyht &lt;- predict(lm.all.train, newdata=mytest)^4\n\n  # Compute y-bar\n  ybar &lt;- mean(mytest$Weekly_Sales) #Yi is given by Ynew from the new sample of data\n  \n  # Compute SSTO\n  SSTO &lt;- sum( (mytest$Weekly_Sales - ybar)^2 )\n  \n  # Compute SSE for each model using y - yhat\n  SSEt &lt;- sum( (mytest$Weekly_Sales - yht)^2 )\n\n  \n  # Compute R-squared for each\n  rst &lt;- 1 - SSEt/SSTO\n\n  \n  # Compute adjusted R-squared for each\n  n &lt;- length(mytest$Weekly_Sales) #sample size\n  pt &lt;- length(coef(lm.all.train)) #num. parameters in model\n\n  rsta &lt;- 1 - (n-1)/(n-pt)*SSEt/SSTO\n\n  \n\nmy_output_table2 &lt;- data.frame(Model = c(\"True\"), `Original R2` = c( summary(lm.all.train)$r.squared), `Orig. Adj. R-squared` = c( summary(lm.all.train)$adj.r.squared), `Validation R-squared` = c(rst), `Validation Adj. R^2` = c(rsta))\n\ncolnames(my_output_table2) &lt;- c(\"Model\", \"Original $R^2$\", \"Original Adj. $R^2$\", \"Validation $R^2$\", \"Validation Adj. $R^2$\")\n\nknitr::kable(my_output_table2, escape=TRUE, digits=4)\n\n\n\n\n\n\n\n\n\n\n\n\nModel\nOriginal R^2\nOriginal Adj. R^2\nValidation R^2\nValidation Adj. R^2\n\n\n\n\nTrue\n0.5088\n0.5088\n0.3483\n0.3482\n\n\n\n\n\nObserving the validation R-square, it’s apparent that it has significantly worsened. Coupled with the persisting issues in my diagnostic plots, it’s clear that employing the transformation is not suitable for my model.",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#conditions",
-    "href": "Linear_Regression/project2.html#conditions",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Conditions",
-    "text": "Conditions\nBased on my model, I have created the graph below with specific conditions to enhance understanding and interpretation for individuals.\nIn this scenario, ‘y’ represents the weekly sales of Walmart, while ‘x’ denotes Unemployment. The consistently flat lines in the graph suggest that fluctuations in the unemployment rate do not significantly impact weekly sales. This finding is logical since, regardless of economic conditions, people generally need to purchase groceries for their sustenance.\nThe five distinct lines in the graph correspond to department groups 1 through 5. It’s observable that department group 1 has the smallest y-intercept and is positioned at the lower end, while department group 5 exhibits the highest y-intercept, indicating the largest sales volume. This discrepancy implies that different departments within Walmart might exhibit varying levels of weekly sales. Unfortunately, due to the dataset’s lack of specific department information, determining which departments these groups represent is challenging. However, according to data from Statista, the grocery department stands out with the highest sales, potentially aligning with department group 5. Nevertheless, without explicit details in the dataset, definitive conclusions cannot be drawn regarding the department representation.\n\n\nShow the code\nplot(Weekly_Sales ~ Unemployment, \n     data=sales_features_no_na, \n     pch = 16, \n     cex = 0.5, \n     col=as.factor(dept_group),main=\"Weekly sales related to different departments\")\nlegend(\"topleft\", bty=\"n\", legend=c(\"Department group=1\",\"Department group=2\", \"Department group=3\", \"Department group=4\",\"Department group=5\"), col=c(\"cyan\",\"black\",\"red\",\"green\",\"blue\"), lty=1)\n\n\nb &lt;- coef(mylm8)\n\n\nMarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=0;dept_groupgroup4=0;dept_groupgroup5=0;i=5\n#drawit &lt;- function(MarkDown1, MarkDown2, MarkDown3, MarkDown5,CPI_group,Unemployment,dept_group ) \ncurve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname=\"Unemployment\",col=palette()[i], add=TRUE)\n\nMarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=1;dept_groupgroup3=0;dept_groupgroup4=0;dept_groupgroup5=0;i=1\n#drawit &lt;- function(MarkDown1, MarkDown2, MarkDown3, MarkDown5,CPI_group,Unemployment,dept_group ) \ncurve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname=\"Unemployment\",col=palette()[i], add=TRUE)\n\n\nMarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=1;dept_groupgroup4=0;dept_groupgroup5=0;i=2\ncurve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname=\"Unemployment\",col=palette()[i], add=TRUE)\n\n\nMarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=0;dept_groupgroup4=1;dept_groupgroup5=0;i=3\ncurve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname=\"Unemployment\",col=palette()[i], add=TRUE)\n \n \nMarkDown1=1;MarkDown2=1;MarkDown3=1;MarkDown5=1;CPI_group2=1;CPI_group3=1;CPI_group4=1;Unemployment=1;dept_groupgroup2=0;dept_groupgroup3=0;dept_groupgroup4=0;dept_groupgroup5=1;i=4\ncurve(b[1] + b[2]*MarkDown1+ b[3]*MarkDown2 + b[4]*MarkDown3+ b[5]*MarkDown5 + b[6]*CPI_group2 + b[7]*CPI_group3 + b[8]*CPI_group4 + b[9]*Unemployment + b[10]*dept_groupgroup2 + b[11]*dept_groupgroup3 + b[12]*dept_groupgroup4 + b[13]*dept_groupgroup5, xname=\"Unemployment\",col=palette()[i], add=TRUE)",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#prediction",
-    "href": "Linear_Regression/project2.html#prediction",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Prediction",
-    "text": "Prediction\nUtilizing the model I developed enables the prediction of Walmart’s weekly sales. For instance, under specific conditions—such as a CPI rate ranging from 10 to 150, an unemployment rate of 1, and department group 2—the projected weekly sales for Walmart fall within the range of $200.4 to $42,331.\n\n\nShow the code\nmypred&lt;- predict(lmt, data.frame(MarkDown1=0,MarkDown2=0,MarkDown3=0,MarkDown5=0,CPI_group=\"2\",Unemployment=1,dept_group=\"group2\"), interval=\"prediction\")^4\nlibrary(pander)\npander(mypred)\n\n\n\n\n\n\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n6717\n200.4\n42331",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/project2.html#furture-study",
-    "href": "Linear_Regression/project2.html#furture-study",
-    "title": "Client Report - [Retail Analysis]",
-    "section": "Furture Study",
-    "text": "Furture Study\nIn future studies, my aim is to enhance the validation R-square to develop a superior model that aligns more accurately with market trends. Additionally, I aspire to acquire additional dataset information to further clarify and improve interpretability.",
-    "crumbs": [
-      "Linear Regression",
-      "Project 2"
     ]
   },
   {
@@ -806,48 +155,127 @@
     ]
   },
   {
-    "objectID": "Linear_Regression/Car_Selling_Price.html",
-    "href": "Linear_Regression/Car_Selling_Price.html",
-    "title": "Client Report - [Car Selling Price]",
+    "objectID": "Linear_Regression/project5.html",
+    "href": "Linear_Regression/project5.html",
+    "title": "Client Report - [Insert Project Title]",
     "section": "",
-    "text": "Show the code\nlibrary(readxl)\nlibrary(car)\nlibrary(tidyverse)\nlibrary(DT)\nlibrary(pander)\nlibrary(ggplot2)\ncarprice &lt;- read_excel(\"~/Desktop/carprice.xlsx\")\n\n\nHere is my report for my old car (BMWX3), which I bought last year and sold it this summer. The price I bought was 9k, and the mileage at that time was 155000 miles, and the price I sold is 6.5k, and the mileage was 161250 miles.",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Linear_Regression/project4.html",
+    "href": "Linear_Regression/project4.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Machine_Learning/project2.html",
+    "href": "Machine_Learning/project2.html",
+    "title": "The War with Star Wars",
+    "section": "",
+    "text": "Elevator pitch\nAs we cleaned the data to make it ready for a machine learning model, we changed all the answers into numbers. After putting the data into the model, we got a 52% accuracy rate when predicting if someone who has watched Star Wars makes more than $50,000 a year.\n\n\nShow the code\n# %%\nurl = 'https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv'\n\ndf_cols = pd.read_csv(url, encoding = \"ISO-8859-1\", nrows = 1).melt()\ndf = pd.read_csv(url, encoding = \"ISO-8859-1\", skiprows =2, header = None )\n\n\n\n\nShorten and Clean Data |Question 1\nShorten the column names and clean them up for easier use with pandas. Provide a table or list that exemplifies how you fixed the names.\n\n\nShow the code\nvariables_replace = {\n    'Which of the following Star Wars films have you seen\\\\? Please select all that apply\\\\.':'Seen',\n    'Please rank the Star Wars films in order of preference with 1 being your favorite film in the franchise and 6 being your least favorite film.':'Rank',\n    'Please state whether you view the following characters favorably, unfavorably, or are unfamiliar with him/her.':'view',\n    'Do you consider yourself to be a fan of the Star Trek franchise\\\\?':'is_fan_star_trek',\n    'Do you consider yourself to be a fan of the Expanded Universe\\\\?\\x8cæ':'is_fan_universe',\n    'Are you familiar with the Expanded Universe\\\\?':'know_universe',\n    'Have you seen any of the 6 films in the Star Wars franchise\\\\?':'seen_any',\n    'Do you consider yourself to be a fan of the Star Wars film franchise\\\\?':'star_wars_fans',\n    'Which character shot first\\\\?':'shot_first',\n    'Unnamed: \\d{1,2}':np.nan,\n    ' ':'_',\n}\n\nvalues_replace = {\n    'Response':'',\n    'Star Wars: Episode ':'',\n    ' ':'_'\n}\n\n\ndf_cols_use = (df_cols\n    .assign(\n        value_replace = lambda x:  x.value.str.strip().replace(values_replace, regex=True),\n        variable_replace = lambda x: x.variable.str.strip().replace(variables_replace, regex=True)\n    )\n    .fillna(method = 'ffill')\n    .fillna(value = \"\")\n    .assign(column_names = lambda x: x.variable_replace.str.cat(x.value_replace, sep = \"__\").str.strip('__').str.lower())\n    )\n\ndf.columns = df_cols_use.column_names.to_list()\ndf_cols_use.head(5)\n\n\n\n\n\n\n\n\n\nvariable\nvalue\nvalue_replace\nvariable_replace\ncolumn_names\n\n\n\n\n0\nRespondentID\n\n\nRespondentID\nrespondentid\n\n\n1\nHave you seen any of the 6 films in the Star W...\nResponse\n\nseen_any\nseen_any\n\n\n2\nDo you consider yourself to be a fan of the St...\nResponse\n\nstar_wars_fans\nstar_wars_fans\n\n\n3\nWhich of the following Star Wars films have yo...\nStar Wars: Episode I The Phantom Menace\nI__The_Phantom_Menace\nSeen\nseen__i__the_phantom_menace\n\n\n4\nUnnamed: 4\nStar Wars: Episode II Attack of the Clones\nII__Attack_of_the_Clones\nSeen\nseen__ii__attack_of_the_clones\n\n\n\n\n\n\n\nwe have combined the data’s two column titles into more precies columns and made it easier for our computer to read, as we are preping to use it in graphs and a ML model.\n\n\nClean and Format |Question 2\nClean and format the data so that it can be used in a machine learning model. As you format the data, you should complete each item listed below. In your final report provide example(s) of the reformatted data with a short description of the changes made.\n\n\n|Part A\nFilter the dataset to respondents that have seen at least one film\n\n\nShow the code\nseen_columns = [\n    'seen__i__the_phantom_menace', \n    'seen__ii__attack_of_the_clones', \n    'seen__iii__revenge_of_the_sith', \n    'seen__iv__a_new_hope', \n    'seen__v_the_empire_strikes_back', \n    'seen__vi_return_of_the_jedi'\n]\n# Filter out respondents who have seen any Star Wars movie but haven't specified any\nhave_seen_df = df[df[seen_columns].notna().any(axis=1)]\n\n\nlooking at if respondents put down the name of a Star Wars movie, and then filtered to people who put down at least on title. this is the data frame that we will be filtering.\n\n\n|Part B\nCreate a new column that converts the age ranges to a single number. Drop the age range categorical column\n\n\nShow the code\n# Convert age ranges to a single number and drop the original column\nhave_seen_df['age_num'] = (have_seen_df['age']\n        .str.replace(\"&gt;\", \"\")\n        .str.replace('18-29', '1')\n        .str.replace('30-44', '2')\n        .str.replace('45-60', '3')\n        .str.replace('60', '4')\n        .astype('float'))\nhave_seen_df = have_seen_df.drop(columns=['age'])\n\n\nfiliting the age column from a string, into a number so it is computable.\n\n\n|Part C\nCreate a new column that converts the education groupings to a single number. Drop the school categorical column\n\n\nShow the code\n#clean up and convert education\nhave_seen_df['education_num'] = (have_seen_df['education']\n        .replace(np.nan, '0')\n        .str.replace('Less than high school degree', '8')\n        .str.replace('High school degree', '12')\n        .str.replace('Some college or Associate degree', '14')\n        .str.replace('Bachelor degree', '16')\n        .str.replace('Graduate degree', '20')\n        .astype('float'))\nhave_seen_df = have_seen_df.drop(columns=['education'])\n\n\nfiltering down esucation to numbers that corispond to number of years of schooling that were aquired by respondents. (ex. 8 = middle school, 12 = highschool, some college = 12…).\n\n\n|Part D\nCreate a new column that converts the income ranges to a single number. Drop the income range categorical column\n\n\nShow the code\n# %%\n#clean up and remove symbols\nnew_income = (have_seen_df['household_income']\n        .str.split(\"-\", expand=True)\n        .rename(columns={0: 'income_min', 1: 'income_max'})\n        .apply(lambda x: x.str.replace(\"$\", \"\"))\n        .apply(lambda x: x.str.replace(\",\", \"\"))\n        .apply(lambda x: x.str.replace(\"+\", \"\"))\n        .astype('float'))\n\n# Join the new income columns back to the DataFrame\nhave_seen_df = pd.concat([have_seen_df, new_income['income_min']], axis=1)\nhave_seen_df = have_seen_df.drop(columns=['household_income'])\n\n\nmaking income into one column by puting the minimum range number as the only number present in the column.\n\n\n|Part E\nCreate your target (also known as “y” or “label”) column based on the new income range column\n\n\nShow the code\nhave_seen_df['income_target'] = have_seen_df['income_min'].apply(lambda x: 1 if x &lt; 50000 else 0)\n\n\ncreating a target column for the ML model with over $50,000 in the income_min column = 1 in the target column, otherwise its a 0.\n\n\nShow the code\n# Assuming df is already defined\npd.set_option('future.no_silent_downcasting', True)\n\ncolumns_to_transform = ['view__han_solo', 'view__luke_skywalker', 'view__princess_leia_organa', 'view__anakin_skywalker', 'view__obi_wan_kenobi', 'view__emperor_palpatine', 'view__darth_vader', 'view__lando_calrissian', 'view__boba_fett', 'view__c-3p0', 'view__r2_d2', 'view__jar_jar_binks', 'view__padme_amidala', 'view__yoda']\n\nfor col in columns_to_transform:\n    have_seen_df[col] = (have_seen_df[col]\n               .replace('Very favorably', 2)\n               .replace('Somewhat favorably', 1)\n               .replace([np.nan, 'Unfamiliar (N/A)', 'Neither favorably nor unfavorably (neutral)'], 0)\n               .replace('Somewhat unfavorably', -1)\n               .replace('Very unfavorably', -2)\n               .astype(int))\n\n\n\n\n|Part F\nOne-hot encode all remaining categorical columns\n\n\nShow the code\n# %%\n# One-hot encoding\ncategorical_columns = ['seen__i__the_phantom_menace', 'seen__ii__attack_of_the_clones', 'seen__iii__revenge_of_the_sith', 'seen__iv__a_new_hope', 'seen__v_the_empire_strikes_back', 'seen__vi_return_of_the_jedi']\n\nhave_seen_df[categorical_columns] = have_seen_df[categorical_columns].notna().astype(int)\n\n# Perform one-hot encoding on 'location_(census_region)' and 'shot_first'\none_hot_df = pd.get_dummies(have_seen_df[['location_(census_region)', 'shot_first']], drop_first=True)\n\n# Concatenate one-hot encoded columns with the original DataFrame\nhave_seen_df = pd.concat([have_seen_df, one_hot_df], axis=1)\n\n# Drop the original categorical columns used for one-hot encoding\nhave_seen_df = have_seen_df.drop(columns=['location_(census_region)', 'shot_first'])\n\n\nHot code the shot_first data, and location data to turn it into nubmers and computable. as well as turnign the seen columns into 1’s if a title and no answers into 0’s.\n\n\nShow the code\n# Combine all transformed columns into the final DataFrame\nfinal_df = have_seen_df.copy()\n\n# Ensure binary representation for all boolean columns\nfinal_df = final_df.replace([True, 'Yes', 'Male'], 1).replace([False, 'No', np.nan, 'Female'], 0)\nfinal_df\n\n\n\n\n\n\n\n\n\nrespondentid\nseen_any\nstar_wars_fans\nseen__i__the_phantom_menace\nseen__ii__attack_of_the_clones\nseen__iii__revenge_of_the_sith\nseen__iv__a_new_hope\nseen__v_the_empire_strikes_back\nseen__vi_return_of_the_jedi\nrank__i__the_phantom_menace\n...\nlocation_(census_region)_East South Central\nlocation_(census_region)_Middle Atlantic\nlocation_(census_region)_Mountain\nlocation_(census_region)_New England\nlocation_(census_region)_Pacific\nlocation_(census_region)_South Atlantic\nlocation_(census_region)_West North Central\nlocation_(census_region)_West South Central\nshot_first_Han\nshot_first_I don't understand this question\n\n\n\n\n0\n3292879998\n1\n1\n1\n1\n1\n1\n1\n1\n3.0\n...\n0\n0\n0\n0\n0\n1\n0\n0\n0\n1\n\n\n2\n3292765271\n1\n0\n1\n1\n1\n0\n0\n0\n1.0\n...\n0\n0\n0\n0\n0\n0\n1\n0\n0\n1\n\n\n3\n3292763116\n1\n1\n1\n1\n1\n1\n1\n1\n5.0\n...\n0\n0\n0\n0\n0\n0\n1\n0\n0\n1\n\n\n4\n3292731220\n1\n1\n1\n1\n1\n1\n1\n1\n5.0\n...\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n\n\n5\n3292719380\n1\n1\n1\n1\n1\n1\n1\n1\n1.0\n...\n0\n1\n0\n0\n0\n0\n0\n0\n1\n0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1180\n3288389603\n1\n1\n1\n1\n1\n1\n1\n1\n3.0\n...\n0\n0\n0\n0\n1\n0\n0\n0\n1\n0\n\n\n1181\n3288388730\n1\n1\n1\n1\n1\n1\n1\n1\n5.0\n...\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n\n\n1182\n3288378779\n1\n1\n1\n1\n1\n1\n1\n1\n4.0\n...\n0\n0\n1\n0\n0\n0\n0\n0\n0\n1\n\n\n1184\n3288373068\n1\n1\n1\n1\n1\n1\n1\n1\n4.0\n...\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n\n\n1185\n3288372923\n1\n0\n1\n1\n0\n0\n1\n1\n6.0\n...\n0\n0\n0\n0\n1\n0\n0\n0\n0\n1\n\n\n\n\n835 rows × 47 columns\n\n\n\nThis is the final filtered data frame. This has 835 respondents and we are using this to make graphs and the ML model.\n\n\nValidate |Question 3\nValidate that the data provided on GitHub lines up with the article by recreating 2 of the visuals from the article.\n\n\nShow the code\n# Calculate percentages\nhan_count = final_df['shot_first_Han'].sum()\ngreedo_count = ((final_df['shot_first_Han'] == 0) & (final_df[\"shot_first_I don't understand this question\"] == 0)).sum()\ndont_understand_count = final_df[\"shot_first_I don't understand this question\"].sum()\n\ntotal_responses = len(final_df)\n\nhan_percent = (han_count / total_responses) * 100\ngreedo_percent = (greedo_count / total_responses) * 100\ndont_understand_percent = (dont_understand_count / total_responses) * 100\ngreedo_percent_rounded = math.floor(greedo_percent)\n\n\n# Create a DataFrame with the percentages\nshot_data = pd.DataFrame({\n    'Who_Shot_First': [\"I don't understand this question\", 'Greedo', 'Han'],\n    'Percent': [dont_understand_percent, greedo_percent_rounded, han_percent]\n})\n\n# Create the bar chart using Plotly\nshot_chart = px.bar(\n    shot_data,\n    x='Percent',\n    y='Who_Shot_First',\n    orientation='h',  # horizontal bars\n    title=\"Who Shot First?\",  # Title of the chart\n)\n\n# Update layout with annotations and subtitle\n\n# Update layout with annotations and subtitle\nshot_chart.update_layout(\n    annotations=[\n        {\n            'x': percent,\n            'y': category,\n            'text': f'{percent:.0f}%',  # Display percentage with two decimal places\n            'showarrow': False,\n            'font': {'color': 'black', 'size': 12},\n            'xanchor': 'left' if percent &lt; 50 else 'right'  # Align text based on bar position\n        }\n        for percent, category in zip(shot_data['Percent'], shot_data['Who_Shot_First'])\n    ],\n)\n# Add subtitle directly using add_annotation()\nshot_chart.add_annotation(\n    text='According to 834 respondents',  # Subtitle text\n    x=-0,  # Subtitle position (middle of the chart)\n    y=1.15,  # Subtitle position (above the chart)\n    xref='paper',  # Subtitle alignment (relative to the entire chart width)\n    yref='paper',  # Subtitle alignment (relative to the entire chart height)\n    showarrow=False,  # No arrow for the annotation\n    font=dict(size=12, color='black'),  # Font settings for the subtitle text\n)\n\n# Show the chart\nshot_chart.show()\n\n\n                                                \n\n\nThis is the replica of the How Shot First graph from the artical.\n\n\nShow the code\n# Calculate percentages\nPhantom = final_df['seen__i__the_phantom_menace'].sum()\nclones = final_df['seen__ii__attack_of_the_clones'].sum()\nRevenge = final_df['seen__iii__revenge_of_the_sith'].sum()\nHope = final_df['seen__iv__a_new_hope'].sum()\nEmpire = final_df['seen__v_the_empire_strikes_back'].sum()\nReturn = final_df['seen__vi_return_of_the_jedi'].sum()\n\ntotal_responses = len(final_df)\n\nPhantom_percent = (Phantom / total_responses) * 100\nclones_percent = (clones / total_responses) * 100\nRevenge_percent = (Revenge / total_responses) * 100\nHope_percent = (Hope / total_responses) * 100\nEmpire_percent  = (Empire  / total_responses) * 100\nReturn_percent = (Return / total_responses) * 100\n\nPhantom_percent = math.floor(Phantom_percent)\n\n\n# Create a DataFrame with the percentages\nshot_data = pd.DataFrame({\n    'movies': [\"Return of the Jedi\", ' The empire Strikes Back', ' A New Hope', 'Revenge fo the Sith', 'Attack of the Clones', 'The Phantom Menace'],\n    'Percent': [Return_percent, Empire_percent, Hope_percent,Revenge_percent, clones_percent, Phantom_percent]\n})\n\n# Create the bar chart using Plotly\nshot_chart = px.bar(\n    shot_data,\n    x='Percent',\n    y='movies',\n    orientation='h',  # horizontal bars\n    title=\"Which 'Star Wars' Movies Have You Seen?\",  # Title of the chart\n)\nshot_chart.update_layout(\n    annotations=[\n        {\n            'x': percent,\n            'y': category,\n            'text': f'{percent:.0f}%',  # Display percentage with two decimal places\n            'showarrow': False,\n            'font': {'color': 'black', 'size': 12},\n            'xanchor': 'left' if percent &gt; 50 else 'right'  # Align text based on bar position\n        }\n        for percent, category in zip(shot_data['Percent'], shot_data['movies'])\n    ],\n)\n# Add subtitle directly using add_annotation()\nshot_chart.add_annotation(\n    text='According to 834 respondents',  # Subtitle text\n    x=-0,  # Subtitle position (middle of the chart)\n    y=1.15,  # Subtitle position (above the chart)\n    xref='paper',  # Subtitle alignment (relative to the entire chart width)\n    yref='paper',  # Subtitle alignment (relative to the entire chart height)\n    showarrow=False,  # No arrow for the annotation\n    font=dict(size=12, color='black'),  # Font settings for the subtitle text\n)\n\nshot_chart\n\n\n                                                \n\n\nThis is the replica of which movie the respondents have seen from the artical.\n\n\nMachine Learning Model|Question 4\nBuild a machine learning model that predicts whether a person makes more than $50k. Describe your model and report the accuracy.\n\n\nShow the code\ncolumns_to_keep = ['age_num', 'gender', 'education_num', 'star_wars_fans', 'seen__iv__a_new_hope', 'seen__vi_return_of_the_jedi', 'seen__v_the_empire_strikes_back', 'location_(census_region)_West North Central','shot_first_Han','location_(census_region)_Middle Atlantic']\n\nX_pred = final_df[columns_to_keep]\ny_pred = final_df['income_target']\nX_train, X_test, y_train, y_test = train_test_split(\n    X_pred, y_pred, test_size = .30, random_state = 100)  \n\n\nclf = tree.DecisionTreeClassifier()\nclf = clf.fit(X_train, y_train)\ny_pred = clf.predict(X_test)\n\n\n\n\nShow the code\ndf_features = pd.DataFrame(\n    {'f_names': X_train.columns, \n    'f_values': clf.feature_importances_}).sort_values('f_values', ascending = False)\n\nchart = px.bar(df_features.head(15),\n    x='f_values', \n    y='f_names'\n)\n\nchart.update_layout(yaxis={'categoryorder':'total ascending'})\n\n\n                                                \n\n\nThis shows the corilation of more then $50,000 for each one of these columns.\n\n\nShow the code\nprint(metrics.classification_report(y_pred, y_test))\n\n\n              precision    recall  f1-score   support\n\n           0       0.82      0.75      0.78       204\n           1       0.22      0.30      0.25        47\n\n    accuracy                           0.67       251\n   macro avg       0.52      0.52      0.52       251\nweighted avg       0.71      0.67      0.68       251\n\n\n\n\n\nShow the code\nmetrics.RocCurveDisplay.from_estimator(clf, X_test, y_test)\n\n\n\n\n\n\n\n\n\nThis graph shows that we have over 50% acuricy with our model.\n\n\nShow the code\ndf_features = pd.DataFrame(\n    {'f_names': X_train.columns, \n    'f_values': clf.feature_importances_}).sort_values('f_values', ascending = False)\n\n\n\n\nShow the code\ndf_features\n\n\n\n\n\n\n\n\n\nf_names\nf_values\n\n\n\n\n2\neducation_num\n0.196010\n\n\n1\ngender\n0.139943\n\n\n0\nage_num\n0.126130\n\n\n3\nstar_wars_fans\n0.109284\n\n\n8\nshot_first_Han\n0.092824\n\n\n4\nseen__iv__a_new_hope\n0.080323\n\n\n7\nlocation_(census_region)_West North Central\n0.076622\n\n\n9\nlocation_(census_region)_Middle Atlantic\n0.069335\n\n\n5\nseen__vi_return_of_the_jedi\n0.065757\n\n\n6\nseen__v_the_empire_strikes_back\n0.043772\n\n\n\n\n\n\n\n\n\nShow the code\nconfusion = metrics.confusion_matrix(y_test, y_pred)\nconfusion\n\n\narray([[153,  33],\n       [ 51,  14]])\n\n\n\n\nShow the code\ntp = confusion[0,0]\nfp = confusion[1,0]\nfn = confusion[0,1]\ntn = confusion[1,1]\n\n\n\n\nShow the code\nprecision = (tp / (tp+fp))\naccuracy = ((tp+tn) / (tp+fn+fp+tn))\nnegative_prediction = (tn / (tn+fn))\nmetrics = {\n    'Metric': ['Precision', 'Accuracy', 'Negative Prediction'],\n    'Value': [precision, accuracy, negative_prediction]}\n\ndf = pd.DataFrame(metrics)\ndf\n\n\n\n\n\n\n\n\n\nMetric\nValue\n\n\n\n\n0\nPrecision\n0.750000\n\n\n1\nAccuracy\n0.665339\n\n\n2\nNegative Prediction\n0.297872\n\n\n\n\n\n\n\nThis table shows our precision accuracy and negative rediction and how acurite they are out of 1. precision is a 75%, accuracy is 67% and our neagtive rediction is 30% acurrate.\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "cleansing.html",
+    "href": "cleansing.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
+  },
+  {
+    "objectID": "cleansing.html#title-2-header",
+    "href": "cleansing.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
+  },
+  {
+    "objectID": "exploration.html",
+    "href": "exploration.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
     "crumbs": [
-      "Linear Regression",
+      "Linear Regression"
+    ]
+  },
+  {
+    "objectID": "exploration.html#title-2-header",
+    "href": "exploration.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Linear Regression"
+    ]
+  },
+  {
+    "objectID": "Story_Telling/project1.html",
+    "href": "Story_Telling/project1.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Story Telling",
       "Project 1"
     ]
   },
   {
-    "objectID": "Linear_Regression/Car_Selling_Price.html#graphical-summaries",
-    "href": "Linear_Regression/Car_Selling_Price.html#graphical-summaries",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "Graphical Summaries",
-    "text": "Graphical Summaries\nThis graph is based on the marketing price of the BMW X3. The pink dot on the graph represents the price at which I purchased my car, while the red dot represents the price at which I sold it. The price difference between these two points is $2,500 (excluding factors like gas or additional expenses). This essentially reflects the depreciation in value my car experienced per mile driven. During my ownership of the car, I drove a total of 6,250 miles. By simple calculation, this translates to a cost of $0.4 per mile. However, when we use the equation derived from the trend line, the suggested selling price for my car is in between $3135 and $1063. And the best price to see my car is $5775.5.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_point(x = 155000, y = 9000, size = 3, color = \"hotpink\") + \n  geom_text(x = 155000, y = 11000 , label = \"The price when I bought my car\", color = \"navy\", size = 3) +\n  geom_point(x = 161250, y = 6500, size = 3, color = \"firebrick\") + \n  geom_text(x = 161250, y = 4000 , label = \"The price when I sold my car\", color = \"navy\", size = 3) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n  stat_function(fun=function(x) exp(10.92 - 0.00001401*x), add=TRUE, col=\"firebrick\") +\n  geom_segment(x=161250, xend=161250, y=3135.847, yend=10637.18, \n               color=\"skyblue\", alpha=0.01, lwd=3) +\n\n    theme_minimal()",
+    "objectID": "Story_Telling/project2.html",
+    "href": "Story_Telling/project2.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
-      "Linear Regression",
+      "Story Telling",
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Erin Hu’s Resume",
+    "section": "",
+    "text": "My Linkdin page\n\n\n\nSenior student at BYU - Idaho\n\n\nHard Skill: Data Analysis(R studio, SQL, Power BI), Data Visualization(Tableau), Microsoft Excel\nSoft Skills: Cross-functional Team Collaboration, Strong Attention to Detail, Analytical Thinking, Problem Solving\n\n\n\nbusiness direction, operation.\n\n\n\n\n2021-2025 Brigham Young University, Idaho\n\nStatistics Major with a Data Science Minor\n\n\n\n\nSep 2024 - Present Data Visualization Specialist 2 , BYUI, Idaho - Initiated new visualized statistics, leading to catching discrepancies between sources using Power BI and Presenting indicators on a weekly basis - Generated time series charts and KPI dashboards to monitor annual performance, collaborating with executive leadership to enhance workflow strategies through the utilization of DAX and Query\nApril 2024 - Sep 2024 Business Analyst Intern , The Church of Jesus Christ of Latter Day Saints, Utah\n\nProcessed 4 million rows of data and organized a comprehensive data dictionary\nCollaborated with various departments and facilitate a strong connection\nDesigned a Power BI dashboard to detect utility bill anomalies and reported to stakeholders\nContributed to analytical projects, data validation, and assisted in data interpretation tasks"
+  },
+  {
+    "objectID": "resume.html#currently",
+    "href": "resume.html#currently",
+    "title": "Erin Hu’s Resume",
+    "section": "",
+    "text": "Senior student at BYU - Idaho\n\n\nHard Skill: Data Analysis(R studio, SQL, Power BI), Data Visualization(Tableau), Microsoft Excel\nSoft Skills: Cross-functional Team Collaboration, Strong Attention to Detail, Analytical Thinking, Problem Solving\n\n\n\nbusiness direction, operation."
+  },
+  {
+    "objectID": "resume.html#education",
+    "href": "resume.html#education",
+    "title": "Erin Hu’s Resume",
+    "section": "",
+    "text": "2021-2025 Brigham Young University, Idaho\n\nStatistics Major with a Data Science Minor"
+  },
+  {
+    "objectID": "resume.html#occupation",
+    "href": "resume.html#occupation",
+    "title": "Erin Hu’s Resume",
+    "section": "",
+    "text": "Sep 2024 - Present Data Visualization Specialist 2 , BYUI, Idaho - Initiated new visualized statistics, leading to catching discrepancies between sources using Power BI and Presenting indicators on a weekly basis - Generated time series charts and KPI dashboards to monitor annual performance, collaborating with executive leadership to enhance workflow strategies through the utilization of DAX and Query\nApril 2024 - Sep 2024 Business Analyst Intern , The Church of Jesus Christ of Latter Day Saints, Utah\n\nProcessed 4 million rows of data and organized a comprehensive data dictionary\nCollaborated with various departments and facilitate a strong connection\nDesigned a Power BI dashboard to detect utility bill anomalies and reported to stakeholders\nContributed to analytical projects, data validation, and assisted in data interpretation tasks"
+  },
+  {
+    "objectID": "Machine_Learning/project1.html",
+    "href": "Machine_Learning/project1.html",
+    "title": "Can You Predict That?",
+    "section": "",
+    "text": "Show the code\n# Data manipulation\nimport pandas as pd\nimport numpy as np\n# Data visualization\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport plotly.express as px\nfrom lets_plot import *\nimport plotly.graph_objects as go\nfrom plotly.subplots import make_subplots\n# Machine Learning models and tools\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.naive_bayes import GaussianNB\nfrom sklearn import tree\n# Model evaluation and metrics\nfrom sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold, cross_val_score\nfrom sklearn.metrics import (\n    accuracy_score, classification_report, confusion_matrix,\n    precision_score, recall_score, f1_score\n)\nfrom sklearn import metrics\nfrom sklearn.preprocessing import StandardScaler\n# Data display utilities\nfrom tabulate import tabulate\n# from plotnine import ggplot, aes, labs, geom_bar, theme,geom_line\n\ndf = pd.read_csv('https://github.com/byuidatascience/data4dwellings/raw/master/data-raw/dwellings_ml/dwellings_ml.csv')\n# print(df.head())\n\n\n\nElevator Pitch\nThe analysis looked at home features and how they relate to when the home was built. It found important details that help decide if a home was built before 1980. Using a Random Forest classification model, we reached about 91% accuracy. Important factors include the number of bedrooms, number of bathrooms, and the style of the home. This model is a useful tool for grouping homes by the time they were built, which can help with marketing and making good decisions in real estate.\n\n\nQUESTION|TASK 1\nCreate 2-3 charts that evaluate potential relationships between the home variables and before1980. Explain what you learn from the charts that could help a machine learning algorithm.\nThe charts below show how different home features are related to whether a home was built before 1980. Understanding these relationships helps a machine learning algorithm by identifying which features are important for predicting the construction period. The line chart and bar chart both shows that there’s more hourses built before 1980.\n\n\nShow the code\nLetsPlot.setup_html()\n\n# Add a new column to indicate whether the house was built before or after 1980\ndf['built_period'] = df['yrbuilt'].apply(lambda x: 'before 1980' if x &lt;= 1980 else 'after 1980')\n\n# print(df['built_period'])\n\n# Group the data by 'numbdrm' and 'built_period' and count occurrences\ngrouped_data = df.groupby(['numbdrm', 'built_period']).size().reset_index(name='count')\n\n# Plot using Lets-Plot\ngg = ggplot(grouped_data, aes(x='numbdrm', y='count', color='built_period')) + \\\n     geom_line() + \\\n     ggtitle('Number of Bedrooms Built Before and After 1980') + \\\n     theme(axis_text_x=element_text(angle=45, hjust=1))\n\ngg.show()\n\n\n\n            \n            \n            \n\n\n   \n   \n\n\n\n\nShow the code\nfrom lets_plot import *\n\n# Initialize Lets-Plot\nLetsPlot.setup_html(isolated_frame=True)\n\n# Create a new column to classify homes built before or after 1980\ndf['built_period'] = df['yrbuilt'].apply(lambda x: 'before 1980' if x &lt;= 1980 else 'after 1980')\n\n# Group data by 'built_period' and count the number of homes\ngrouped_before1980 = df['built_period'].value_counts().reset_index()\ngrouped_before1980.columns = ['Built Period', 'numbaths']\n\n# Creating the bar plot using Lets-Plot\nplot = (ggplot(grouped_before1980, aes(x='Built Period', y='numbaths', fill='Built Period')) +\n        geom_bar(stat='identity') +\n        ggsize(800, 500) +\n        ggtitle('Number of Bathrooms: Built Before 1980 vs After 1980') +\n        xlab('Built Period') +\n        ylab('numbaths') +\n        theme(axis_text_x=element_text(angle=45, hjust=1)))\n\n# Display the plot\nplot.show()\n\n\n\n   \n       \n       \n   \n   \n          \n   \n   \n\n\n\n\n\nQUESTION|TASK 2\nBuild a classification model labeling houses as being built “before 1980” or “during or after 1980”. Your goal is to reach or exceed 90% accuracy. Explain your final model choice (algorithm, tuning parameters, etc) and describe what other models you tried.\nI chose the Random Forest model for this task because it is reliable and can handle many features effectively without overfitting. This model achieved an accuracy of 91%. In the future, I am interested in exploring other modeling methods to improve performance and gain new insights.\n\n\nShow the code\n# # random_state=42 helps ensure that the data split will be the same every time you run the code, making your results reproducible and easier to compare across different experiments\nq2 = df.drop(columns=['livearea',  'yrbuilt', \n                       'numbdrm', 'numbaths', 'built_period', \n                      'parcel'])\n\n#'stories', 'finbsmnt', 'nocars', 'basement', \n\nnp.random.seed(42)\n# q2['random_noise'] = np.random.rand(len(q2))\n\n# Split the data into features (X) and target (y)\nX = q2.drop('before1980', axis=1)\ny = q2['before1980']\n\n# Split the data into training and test sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# # I don't need to transform but also do it won't affect\n# scaler = StandardScaler()\n# X_train_scaled = scaler.fit_transform(X_train)  # Fit and transform on training data\n# X_test_scaled = scaler.transform(X_test)        # Transform test data (no fitting)\n\n# Initialize and train the model on scaled data\nrf = RandomForestClassifier(random_state=42)\nrf.fit(X_train, y_train)  # Train on scaled training data\n\nrf_predictions = rf.predict(X_test)\n\nrf_accuracy = accuracy_score(y_test, rf_predictions)\nrf_classification_report = classification_report(y_test, rf_predictions, output_dict=True)\nrf_confusion_matrix = confusion_matrix(y_test, rf_predictions)\n\n# Convert accuracy to percentage with 2 decimal points\nrf_accuracy_percentage = rf_accuracy * 100\n\n# Convert classification report to DataFrame and round to 2 decimal points\nrf_classification_report_df = pd.DataFrame(rf_classification_report).transpose().round(2)\n\n# Use tabulate to display the classification report\nprint(f\"Random Forest Classifier Accuracy: {rf_accuracy_percentage:.2f}%\")\nprint(\"\\nRandom Forest Classification Report:\")\nprint(tabulate(rf_classification_report_df, headers='keys', tablefmt='pretty'))\n\n\nRandom Forest Classifier Accuracy: 90.66%\n\nRandom Forest Classification Report:\n+--------------+-----------+--------+----------+---------+\n|              | precision | recall | f1-score | support |\n+--------------+-----------+--------+----------+---------+\n|      0       |   0.88    |  0.87  |   0.87   | 1710.0  |\n|      1       |   0.92    |  0.93  |   0.93   | 2873.0  |\n|   accuracy   |   0.91    |  0.91  |   0.91   |  0.91   |\n|  macro avg   |    0.9    |  0.9   |   0.9    | 4583.0  |\n| weighted avg |   0.91    |  0.91  |   0.91   | 4583.0  |\n+--------------+-----------+--------+----------+---------+\n\n\n\n\nShow the code\n##TRYYYYYY\n# qtry = df.drop(columns=['livearea', 'yrbuilt', 'numbdrm', 'numbaths', 'built_period', 'parcel'])\n\n\n\n\nQUESTION|TASK 3\nJustify your classification model by discussing the most important features selected by your model. This discussion should include a feature importance chart and a description of the features.\nThe Random Forest model identifies the most important features based on their importance scores. These features play a key role in the model’s decision-making process and contribute to accurately predicting whether a house was built before or after 1980.\n\n\nShow the code\n# Drop unnecessary columns\ndf_q3 = df.drop(columns=['livearea',  'yrbuilt', \n                       'numbdrm', 'numbaths', 'built_period', \n                      'parcel'])\n# Add a random noise feature\nnp.random.seed(42)\ndf_q3['random_noise'] = np.random.rand(len(df_q3))\n\n# Convert categorical columns to numeric (if any)\ncategorical_cols = df_q3.select_dtypes(include=['object', 'category']).columns\ndf_q3 = pd.get_dummies(df_q3, columns=categorical_cols, drop_first=True)\n\n# Split data into features and target variable\nX = df_q3.drop(columns=['before1980'])\ny = df_q3['before1980']\n\n# Split data into training and testing sets\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)\n\n# Standardize the data\nscaler = StandardScaler()\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)\n\n# Initialize the Random Forest classifier\nrf_classifier = RandomForestClassifier(n_estimators=10, max_depth=4, random_state=42)\nrf_classifier.fit(X_train_scaled, y_train)\n\n# Get feature importances\nfeature_importances = rf_classifier.feature_importances_\nfeatures = X.columns\n\n# Create a DataFrame for feature importances\nfeature_importances_df = (\n    pd.DataFrame({\n        'Feature': features,\n        'Importance (%)': (feature_importances * 100).round(2)  # Convert to percentage and round\n    })\n    .sort_values(by='Importance (%)', ascending=False)\n)\n\n# Display the top 10 most important features\nmost_important_features = feature_importances_df.head(5)\nprint(\"Most Important Features:\\n\")\nprint(most_important_features.to_string(index=False))\n\n# Plot feature importances\nplt.figure(figsize=(10, 6))\nsns.barplot(x='Importance (%)', y='Feature', data=most_important_features, palette='viridis')\nplt.title('Top 10 Feature Importances from Random Forest Classifier')\nplt.xlabel('Importance (%)')\nplt.ylabel('Feature')\nplt.tight_layout()\nplt.show()\n\n\nMost Important Features:\n\n           Feature  Importance (%)\narcstyle_ONE-STORY           18.75\n           stories           16.50\narcstyle_TWO-STORY            9.58\n       gartype_Att            8.44\n         quality_B            6.36\n\n\n\n\n\n\n\n\n\n\n\nQUESTION|TASK 4\nDescribe the quality of your classification model using 2-3 different evaluation metrics. You also need to explain how to interpret each of the evaluation metrics you use.\nInsights: To understand how well our model did, we can utilize various evaluation metrics. The Random Forest model used achieved an accuracy score of 91%. Accuracy is the proportion of correctly predicted instances in the model. Other evaluation metrics include precision (proportion of true positive predictions amoung all positive predictions made), recall (proportion of true positive predictions among all all actual positive instances), and F1-score (mean of precision and recall).\n\n\nShow the code\nprint(\"\\nRandom Forest Classification Report:\")\nprint(tabulate(rf_classification_report_df, headers='keys', tablefmt='pretty'))\n\n\n\nRandom Forest Classification Report:\n+--------------+-----------+--------+----------+---------+\n|              | precision | recall | f1-score | support |\n+--------------+-----------+--------+----------+---------+\n|      0       |   0.88    |  0.87  |   0.87   | 1710.0  |\n|      1       |   0.92    |  0.93  |   0.93   | 2873.0  |\n|   accuracy   |   0.91    |  0.91  |   0.91   |  0.91   |\n|  macro avg   |    0.9    |  0.9   |   0.9    | 4583.0  |\n| weighted avg |   0.91    |  0.91  |   0.91   | 4583.0  |\n+--------------+-----------+--------+----------+---------+\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Machine Learning",
       "Project 1"
     ]
   },
   {
-    "objectID": "Linear_Regression/Car_Selling_Price.html#hypothesis",
-    "href": "Linear_Regression/Car_Selling_Price.html#hypothesis",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "Hypothesis",
-    "text": "Hypothesis\n\n\\underset{\\text{Log Car Price}}{\\log(Y_i)} = \\overbrace{\\beta_0}^{\\text{Y-int}} + \\overbrace{\\beta_1}^{\\text{Slope}} \\underset{\\text{Mileage}}{X_i} + \\epsilon_i \\quad \\text{Where } \\epsilon_i \\sim N(0, \\sigma^2)\n\nHypothesis Test:\n\nH_0: \\beta_1 = 0 \\\\\nH_a: \\beta_1 \\neq 0",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "Linear_Regression/Car_Selling_Price.html#analysis",
-    "href": "Linear_Regression/Car_Selling_Price.html#analysis",
-    "title": "Client Report - [Car Selling Price]",
-    "section": "Analysis",
-    "text": "Analysis\nThis the graph of all the data that I collect. The blue line is the regression line of the trend, but of course, the price in the real world is not gonna be a stright line.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_smooth(method =\"lm\", formula = y~x, se=FALSE) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n\n    theme_minimal()\n\n\n\n\n\n\n\n\n\nSo I tried to find what is my λ by using boxCox function.\n\n\nShow the code\ncarprice.lm &lt;- lm(Price ~ Mileage, data=carprice)\nboxCox(carprice.lm)\n\n\n\n\n\n\n\n\n\nThis graph helps me to decide what is my λ, 0 seems like to be my best fit, so I will choose my λ to be 0. Also in this way, I will know that I have to use the log function as the way to transform my data. That’s the best since log carry the interpretation with it.\n\n\nShow the code\ncarprice.lm.t &lt;- lm(log(Price) ~ Mileage, data=carprice)\nsummary(carprice.lm.t) |&gt; \n  pander()\n\n\n\n\n\n\n\n\n\n\n\n\n \nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\n(Intercept)\n10.92\n0.09799\n111.4\n3.2e-28\n\n\nMileage\n-1.401e-05\n1.069e-06\n-13.11\n5.731e-11\n\n\n\n\nFitting linear model: log(Price) ~ Mileage\n\n\n\n\n\n\n\n\nObservations\nResidual Std. Error\nR^2\nAdjusted R^2\n\n\n\n\n21\n0.2699\n0.9005\n0.8952\n\n\n\n\n\nThis is the regression line after I transform my data. And from the table, I will know 10.92 is my intercept, and -0.00001401 is my slope.\n\n\\underset{\\text{Log Car Price}}{\\log(Y'_i)} = 10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}\n\nAnd if I want to put this into the real world, this means I suppose to sell my car at the price of 7.5k.\nAfter the transformation, this equation can help me to find the best price that I should sell my car.\n\n\\underset{\\text{Car Price}}{\\hat{Y}_i} = e^{10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}}\n\n\n\nShow the code\nmypred&lt;- predict(carprice.lm.t, data.frame(Mileage=161250), interval=\"prediction\")\npander(exp(mypred))\n\n\n\n\n\n\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n5776\n3136\n10637\n\n\n\n\n\nAfter I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!",
-    "crumbs": [
-      "Linear Regression",
-      "Project 1"
-    ]
+    "objectID": "index.html#machhine-learning",
+    "href": "index.html#machhine-learning",
+    "title": "Erin",
+    "section": "Machhine Learning",
+    "text": "Machhine Learning\n\nHouse Prediction\n\n\nThe War with Star Wars"
   },
   {
     "objectID": "Linear_Regression/Car Selling_Price.html",
@@ -878,17 +306,44 @@
     "text": "Analysis\nThis the graph of all the data that I collect. The blue line is the regression line of the trend, but of course, the price in the real world is not gonna be a stright line.\n\n\nShow the code\nggplot(carprice, aes(x=Mileage, y =Price)) +\n  geom_point() +\n  geom_smooth(method =\"lm\", formula = y~x, se=FALSE) +\n  labs(x=\"The Mileage of the Vehicel(miles)\", y=\"The Price of the Vehicel(dollars)\", title = \"The Price of Vehicles according to their Mileage\") +\n\n    theme_minimal()\n\n\n\n\n\n\n\n\n\nSo I tried to find what is my λ by using boxCox function.\n\n\nShow the code\ncarprice.lm &lt;- lm(Price ~ Mileage, data=carprice)\nboxCox(carprice.lm)\n\n\n\n\n\n\n\n\n\nThis graph helps me to decide what is my λ, 0 seems like to be my best fit, so I will choose my λ to be 0. Also in this way, I will know that I have to use the log function as the way to transform my data. That’s the best since log carry the interpretation with it.\n\n\nShow the code\ncarprice.lm.t &lt;- lm(log(Price) ~ Mileage, data=carprice)\nsummary(carprice.lm.t) |&gt; \n  pander()\n\n\n\n\n\n\n\n\n\n\n\n\n \nEstimate\nStd. Error\nt value\nPr(&gt;|t|)\n\n\n\n\n(Intercept)\n10.92\n0.09799\n111.4\n3.2e-28\n\n\nMileage\n-1.401e-05\n1.069e-06\n-13.11\n5.731e-11\n\n\n\n\nFitting linear model: log(Price) ~ Mileage\n\n\n\n\n\n\n\n\nObservations\nResidual Std. Error\nR^2\nAdjusted R^2\n\n\n\n\n21\n0.2699\n0.9005\n0.8952\n\n\n\n\n\nThis is the regression line after I transform my data. And from the table, I will know 10.92 is my intercept, and -0.00001401 is my slope.\n\n\\underset{\\text{Log Car Price}}{\\log(Y'_i)} = 10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}\n\nAnd if I want to put this into the real world, this means I suppose to sell my car at the price of 7.5k.\nAfter the transformation, this equation can help me to find the best price that I should sell my car.\n\n\\underset{\\text{Car Price}}{\\hat{Y}_i} = e^{10.92 - 0.00001401 \\underset{\\text{Mileage}}{X_i}}\n\n\n\nShow the code\nmypred&lt;- predict(carprice.lm.t, data.frame(Mileage=161250), interval=\"prediction\")\npander(exp(mypred))\n\n\n\n\n\n\n\n\n\n\nfit\nlwr\nupr\n\n\n\n\n5776\n3136\n10637\n\n\n\n\n\nAfter I put 161250 mils as my mileage, I got $5775.5 as the best price that I can sell my car. Since I sold my car at $6500, I did a good job!"
   },
   {
-    "objectID": "index.html#linear-regression",
-    "href": "index.html#linear-regression",
-    "title": "Erin",
+    "objectID": "Linear_Regression/project3.html",
+    "href": "Linear_Regression/project3.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "ml.html",
+    "href": "ml.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "objectID": "ml.html#title-2-header",
+    "href": "ml.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "objectID": "full_stack.html",
+    "href": "full_stack.html",
+    "title": "about me",
     "section": "",
     "text": "MarkDown Basics"
   },
   {
-    "objectID": "index.html#machhine-learning",
-    "href": "index.html#machhine-learning",
-    "title": "Erin",
-    "section": "Machhine Learning",
-    "text": "Machhine Learning\n\nHouse Prediction\n\n\nThe War with Star Wars"
+    "objectID": "full_stack.html#title-2-header",
+    "href": "full_stack.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
   }
 ]
